@@ -306,6 +306,7 @@ const (
 
 	GroupResponseAgree  = 1
 	GroupResponseRefuse = -1
+	GroupRevokeApply    = -2
 
 	FriendResponseNotHandle = 0
 	FriendResponseAgree     = 1

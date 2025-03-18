@@ -30,6 +30,14 @@ message CreateGroupResp {
   openim.sdkws.GroupInfo groupInfo = 1;
 }
 
+message ResetGroupLinkReq {
+  string groupID = 1;
+}
+
+message ResetGroupLinkResp {
+  string linkUrl = 1;
+}
+
 message GetGroupsInfoReq {
   repeated string groupIDs = 1;
 }
@@ -91,6 +99,16 @@ message TransferGroupOwnerReq {
 }
 message TransferGroupOwnerResp {}
 
+message GetGroupRelationByUserReq {
+  string groupID = 2;
+  string timestamp = 3;
+  string signature = 4;
+}
+message GetGroupRelationByUserResp {
+  int32 groupStatus = 1;
+  string groupMessage = 2;
+}
+
 message JoinGroupReq {
   string groupID = 1;
   string reqMessage = 2;
@@ -99,6 +117,13 @@ message JoinGroupReq {
   string ex = 5;
 }
 message JoinGroupResp {}
+
+message RevokeApplyReq {
+  string userID = 1;
+  string groupID = 2;
+}
+
+message RevokeApplyResp {}
 
 message GroupApplicationResponseReq {
   string groupID = 1;
@@ -401,10 +426,16 @@ message BatchGetIncrementalGroupMemberResp {
 }
 
 service group {
+  //通过用户编号获取与群的关系
+  rpc GetGroupRelationByUser(GetGroupRelationByUserReq) returns (GetGroupRelationByUserResp);
   //创建群
   rpc createGroup(CreateGroupReq) returns (CreateGroupResp);
+  //重置群组链接
+  rpc resetGroupLink(ResetGroupLinkReq) returns (ResetGroupLinkResp);
   //申请加群
   rpc joinGroup(JoinGroupReq) returns (JoinGroupResp);
+  //撤回申请
+  rpc revokeApply(RevokeApplyReq) returns (RevokeApplyResp);
   //退出群
   rpc quitGroup(QuitGroupReq) returns (QuitGroupResp);
   //获取指定群信息
@@ -473,4 +504,5 @@ service group {
   rpc GetFullGroupMemberUserIDs(GetFullGroupMemberUserIDsReq) returns (GetFullGroupMemberUserIDsResp);
 
   rpc GetFullJoinGroupIDs(GetFullJoinGroupIDsReq) returns (GetFullJoinGroupIDsResp);
+
 }
