@@ -168,6 +168,33 @@ message KickGroupMemberReq {
 
 message KickGroupMemberResp {}
 
+message BlockGroupMemberReq {
+  string groupID = 1;
+  string userID = 2;
+  string blockUserID = 3;
+}
+
+message GroupMemberBlocksReq {
+  openim.sdkws.RequestPagination pagination = 1;
+  string groupID = 2;
+}
+
+message GroupMemberBlock {
+  string GroupID = 1;
+  string OwnerUserID = 2;
+  string BlockUserID = 3;
+  string CreateTime = 4;
+  string OperatorUserID = 5;
+  string Ex = 6;
+}
+
+message GroupMemberBlocksResp {
+  uint32 total = 1;
+  repeated GroupMemberBlock blocks = 2;
+}
+
+message BlockGroupMemberResp {}
+
 message GetJoinedGroupListReq {
   openim.sdkws.RequestPagination pagination = 1;
   string fromUserID = 2;
@@ -460,6 +487,11 @@ service group {
   rpc getGroupMembersInfo(GetGroupMembersInfoReq) returns (GetGroupMembersInfoResp);
   //踢出群
   rpc kickGroupMember(KickGroupMemberReq) returns (KickGroupMemberResp);
+  //封禁群组成员
+  rpc blockGroupMember(BlockGroupMemberReq) returns (BlockGroupMemberResp);
+  //群组封禁列表
+  rpc groupMemberBlocks(GroupMemberBlocksReq) returns (GroupMemberBlocksResp);
+
   //获取某个人已加入群
   rpc getJoinedGroupList(GetJoinedGroupListReq) returns (GetJoinedGroupListResp);
   //邀请某些人进群
