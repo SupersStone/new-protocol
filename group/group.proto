@@ -170,9 +170,24 @@ message KickGroupMemberResp {}
 
 message BlockGroupMemberReq {
   string groupID = 1;
-  string userID = 2;
-  string blockUserID = 3;
+  string blockUserID = 2;
 }
+
+message DeleteBlockGroupMemberReq {
+  string groupID = 1;
+  string blockUserID = 2;
+}
+
+message DeleteBlockGroupMemberResp{}
+
+message AfreshJoinGroupReq {
+  string groupID = 1;
+  string invitedUserID = 2;
+  string reason = 3;
+}
+
+message AfreshJoinGroupResp {}
+
 
 message GroupMemberBlocksReq {
   openim.sdkws.RequestPagination pagination = 1;
@@ -183,13 +198,16 @@ message GroupMemberBlock {
   string GroupID = 1;
   string OwnerUserID = 2;
   string BlockUserID = 3;
-  string CreateTime = 4;
+  int64 CreateTime = 4;
   string OperatorUserID = 5;
   string Ex = 6;
+  string OwnerUserName = 7;
+  string BlockUserName = 8;
+  string FaceUrl = 9;
 }
 
 message GroupMemberBlocksResp {
-  uint32 total = 1;
+  int64 total = 1;
   repeated GroupMemberBlock blocks = 2;
 }
 
@@ -491,6 +509,12 @@ service group {
   rpc blockGroupMember(BlockGroupMemberReq) returns (BlockGroupMemberResp);
   //群组封禁列表
   rpc groupMemberBlocks(GroupMemberBlocksReq) returns (GroupMemberBlocksResp);
+  //删除群组封禁成员
+  rpc DeleteBlockGroupMember(DeleteBlockGroupMemberReq) returns (DeleteBlockGroupMemberResp);
+
+  // 从封禁成员拉入群组
+  rpc AfreshJoinGroup(AfreshJoinGroupReq) returns (AfreshJoinGroupResp);
+
 
   //获取某个人已加入群
   rpc getJoinedGroupList(GetJoinedGroupListReq) returns (GetJoinedGroupListResp);
