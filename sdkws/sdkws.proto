@@ -42,7 +42,10 @@ message GroupInfo {
   int32 autoDeleteMsg = 18;
   int32 autoDeleteDuration = 19;
   int32 verifyApprove = 20;
-  string groupLink = 21;
+  int32 groupLinkStatus = 21;
+  string groupLink = 22;
+  int32 groupLinkEntryVerify = 23;
+  int32 editGroupBaseInfo = 24;
 }
 
 message GroupInfoForSet {
@@ -87,6 +90,9 @@ message UserInfo {
   int64 createTime = 5;
   int32 appMangerLevel = 6;
   int32 globalRecvMsgOpt = 7;
+  int32 allowSendMessages = 8;
+  int32 allowVoiceCalls = 9;
+  int32 allowGroupInvitations = 10;
 }
 
 message UserInfoWithEx {

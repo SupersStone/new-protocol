@@ -60,6 +60,7 @@ message SetGroupInfoExReq {
   openim.protobuf.Int32Value needVerification = 7;
   openim.protobuf.Int32Value lookMemberInfo = 8;
   openim.protobuf.Int32Value applyMemberFriend = 9;
+  openim.protobuf.Int32Value editGroupBaseInfo = 10;
 }
 message SetGroupInfoExResp {}
 

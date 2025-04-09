@@ -340,6 +340,11 @@ const (
 )
 
 const (
+	MemberEditGroupBaseInfo = 0 // 群成员可编辑基础信息
+	AdminEditGroupBaseInfo  = 1 // 管理员可以编辑群基础信息
+)
+
+const (
 	GroupRPCRecvSize = 30
 	GroupRPCSendSize = 30
 )
