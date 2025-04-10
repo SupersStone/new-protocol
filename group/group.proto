@@ -28,6 +28,7 @@ message CreateGroupReq {
 }
 message CreateGroupResp {
   openim.sdkws.GroupInfo groupInfo = 1;
+  repeated openim.sdkws.UserFullInfo filterUser = 2;
 }
 
 message ResetGroupLinkReq {

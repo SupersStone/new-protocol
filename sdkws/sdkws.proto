@@ -153,6 +153,51 @@ message FriendRequest {
   string ex = 13;
 }
 
+message UserFullInfo {
+  string  userID = 1;
+  string  password = 2;
+  string  account = 3;
+  string  phoneNumber = 4;
+  string  areaCode = 5;
+  string  email = 6;
+  string  nickname = 7;
+  string  faceURL = 8;
+  int32  gender = 9;
+  int32  level = 10;
+  int64 birth = 11;
+  int32  allowAddFriend = 12;
+  int32  allowBeep = 13;
+  int32  allowVibration = 14;
+  int32 globalRecvMsgOpt = 15;
+  int32 registerType = 16;
+  string surName = 17;
+  string name = 18;
+  string qrcodeUrl = 19;
+  string publicKey = 20;
+  string address = 21;
+  int32 isContact = 22;
+  int32 isBlocked = 23;
+  int32 onlineStatus = 24;
+  int32 autoDeleteMsg = 25;
+  int32 autoDeleteDuration = 26;
+  int32 autoVoiceCalls = 27;
+  int32 allowGroupInvitations = 28;
+}
+
+message ContactFullInfo {
+  string ownerUserID = 1;
+  int32 createTime = 2;
+  string addSource = 3;
+  string operatorUserID = 4;
+  string ex = 5;
+  string contactUserID = 6;
+  bool status = 7;
+  bool isBlock = 8;
+  string remarkName = 9;
+  string remarkSurname = 10;
+}
+
+
 ///////////////////////////////////base end/////////////////////////////////////
 enum PullOrder {
   PullOrderAsc = 0;
