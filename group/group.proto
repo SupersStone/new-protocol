@@ -229,7 +229,9 @@ message InviteUserToGroupReq {
   string reason = 2;
   repeated string invitedUserIDs = 3;
 }
-message InviteUserToGroupResp {}
+message InviteUserToGroupResp {
+  repeated openim.sdkws.UserFullInfo filterUser = 1;
+}
 
 message GetGroupAllMemberReq {
   openim.sdkws.RequestPagination pagination = 1;
