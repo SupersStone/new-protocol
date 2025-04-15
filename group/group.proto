@@ -62,6 +62,9 @@ message SetGroupInfoExReq {
   openim.protobuf.Int32Value lookMemberInfo = 8;
   openim.protobuf.Int32Value applyMemberFriend = 9;
   openim.protobuf.Int32Value editGroupBaseInfo = 10;
+  openim.protobuf.Int32Value groupLinkStatus = 11;
+  openim.protobuf.StringValue groupLink = 12;
+  openim.protobuf.Int32Value groupLinkEntryVerify = 13;
 }
 message SetGroupInfoExResp {}
 
