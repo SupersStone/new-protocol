@@ -114,8 +114,8 @@ message GetGroupRelationByUserResp {
   string groupMessage = 2;
   string faceUrl = 3;
   string groupName = 4;
-  openim.protobuf.Int32Value memberCount = 5;
-  openim.protobuf.Int32Value entryVerify = 6;
+  int32 memberCount = 5;
+  int32 entryVerify = 6;
 }
 
 message JoinGroupReq {
