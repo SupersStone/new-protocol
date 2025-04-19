@@ -108,14 +108,15 @@ message GetGroupRelationByUserReq {
   string groupID = 2;
   string timestamp = 3;
   string signature = 4;
+  string userID = 5;
 }
 message GetGroupRelationByUserResp {
   int32 groupStatus = 1;
   string groupMessage = 2;
   string faceUrl = 3;
   string groupName = 4;
-  int32 memberCount = 5;
-  int32 entryVerify = 6;
+  openim.protobuf.Int32Value memberCount = 5;
+  openim.protobuf.Int32Value entryVerify = 6;
 }
 
 message JoinGroupReq {
