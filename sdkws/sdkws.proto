@@ -46,6 +46,7 @@ message GroupInfo {
   string groupLink = 22;
   int32 groupLinkEntryVerify = 23;
   int32 editGroupBaseInfo = 24;
+  uint32 requestCount = 25;
 }
 
 message GroupInfoForSet {
