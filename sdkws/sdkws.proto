@@ -39,8 +39,8 @@ message GroupInfo {
   int32 applyMemberFriend = 15;
   int64 notificationUpdateTime = 16;
   string notificationUserID = 17;
-  int32 autoDeleteMsg = 18;
-  int32 autoDeleteDuration = 19;
+  openim.protobuf.Int32Value autoDeleteMsg = 18;
+  openim.protobuf.Int32Value autoDeleteDuration = 19;
   int32 verifyApprove = 20;
   int32 groupLinkStatus = 21;
   string groupLink = 22;
