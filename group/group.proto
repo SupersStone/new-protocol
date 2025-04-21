@@ -43,7 +43,7 @@ message GetGroupsInfoReq {
   repeated string groupIDs = 1;
 }
 message GetGroupsInfoResp {
-  repeated openim.sdkws.GroupInfo groupInfos = 1;
+  repeated openim.sdkws.GroupInfo2 groupInfos = 1;
 }
 
 message SetGroupInfoReq {
