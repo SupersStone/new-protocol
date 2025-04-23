@@ -213,8 +213,8 @@ message GroupMemberBlock {
   string OwnerUserName = 7;
   string BlockUserName = 8;
   string FaceUrl = 9;
-  string SurName = 10;
-  string Name = 11;
+  string BlockSurName = 10;
+  string BlockName = 11;
 }
 
 message GroupMemberBlocksResp {
