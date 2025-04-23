@@ -212,7 +212,7 @@ message GroupMemberBlock {
   string Ex = 6;
   string OwnerUserName = 7;
   string BlockUserName = 8;
-  string FaceUrl = 9;
+  string BlockFaceUrl = 9;
   string BlockSurName = 10;
   string BlockName = 11;
 }
