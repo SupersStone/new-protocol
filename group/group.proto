@@ -65,6 +65,9 @@ message SetGroupInfoExReq {
   openim.protobuf.Int32Value groupLinkStatus = 11;
   openim.protobuf.StringValue groupLink = 12;
   openim.protobuf.Int32Value groupLinkEntryVerify = 13;
+  openim.protobuf.Int32Value autoDeleteMsg = 14;
+  openim.protobuf.Int32Value autoDeleteDuration = 15;
+
 }
 message SetGroupInfoExResp {}
 
