@@ -546,6 +546,7 @@ message ConversationSetPrivateTips {
   string sendID = 2;
   bool isPrivate = 3;
   string conversationID = 4;
+  openim.protobuf.Int32Value burnDuration = 5;
 }
 
 message ConversationHasReadTips {
