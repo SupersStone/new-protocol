@@ -95,6 +95,8 @@ const (
 	GroupMemberSetToOrdinaryUserNotification = 1518
 	GroupInfoSetAnnouncementNotification     = 1519
 	GroupInfoSetNameNotification             = 1520
+	GroupInfoSetFaceUrlNotification          = 1521
+	GroupInfoSetIntroductionNotification     = 1522
 
 	//SignalingNotificationBegin = 1600
 	//SignalingNotification      = 1601
