@@ -100,6 +100,8 @@ const (
 	EnableGroupLinks                         = 1523
 	CloseGroupLinks                          = 1524
 	ResetGroupLinks                          = 1525
+	EnableGroupLinkAdministratorApproval     = 1526
+	CloseGroupLinkAdministratorApproval      = 1527
 
 	//SignalingNotificationBegin = 1600
 	//SignalingNotification      = 1601
