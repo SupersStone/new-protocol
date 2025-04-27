@@ -97,6 +97,9 @@ const (
 	GroupInfoSetNameNotification             = 1520
 	GroupInfoSetFaceUrlNotification          = 1521
 	GroupInfoSetIntroductionNotification     = 1522
+	EnableGroupLinks                         = 1523
+	CloseGroupLinks                          = 1524
+	ResetGroupLinks                          = 1525
 
 	//SignalingNotificationBegin = 1600
 	//SignalingNotification      = 1601
