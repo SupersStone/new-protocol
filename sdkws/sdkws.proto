@@ -26,27 +26,19 @@ message GroupInfo {
   string groupName = 2;
   string notification = 3;
   string introduction = 4;
-  string faceURL = 5;
+  openim.protobuf.StringValue faceURL = 5;
   string ownerUserID = 6;
   int64 createTime = 7;
-  uint32 memberCount = 8;
+  openim.protobuf.UInt32Value memberCount = 8;
   string ex = 9;
-  int32 status = 10;
+  openim.protobuf.Int32Value status = 10;
   string creatorUserID = 11;
   int32 groupType = 12;
-  int32 needVerification = 13;
+  openim.protobuf.Int32Value needVerification = 13;
   int32 lookMemberInfo = 14;
   int32 applyMemberFriend = 15;
   int64 notificationUpdateTime = 16;
   string notificationUserID = 17;
-//  int32 autoDeleteMsg = 18;
-//  int32 autoDeleteDuration = 19;
-//  int32 verifyApprove = 20;
-//  int32 groupLinkStatus = 21;
-//  string groupLink = 22;
-//  int32 groupLinkEntryVerify = 23;
-//  int32 editGroupBaseInfo = 24;
-//  int32 joinGroupApplyNumber = 25;
   openim.protobuf.Int32Value autoDeleteMsg = 18;
   openim.protobuf.Int32Value autoDeleteDuration = 19;
   openim.protobuf.Int32Value verifyApprove = 20;
@@ -56,34 +48,6 @@ message GroupInfo {
   openim.protobuf.Int32Value editGroupBaseInfo = 24;
   openim.protobuf.Int32Value joinGroupApplyNumber = 25;
 }
-
-//message GroupInfoMap {
-//  string groupID = 1;
-//  string groupName = 2;
-//  string notification = 3;
-//  string introduction = 4;
-//  string faceURL = 5;
-//  string ownerUserID = 6;
-//  int64 createTime = 7;
-//  uint32 memberCount = 8;
-//  string ex = 9;
-//  int32 status = 10;
-//  string creatorUserID = 11;
-//  int32 groupType = 12;
-//  int32 needVerification = 13;
-//  int32 lookMemberInfo = 14;
-//  int32 applyMemberFriend = 15;
-//  int64 notificationUpdateTime = 16;
-//  string notificationUserID = 17;
-//  openim.protobuf.Int32Value autoDeleteMsg = 18;
-//  openim.protobuf.Int32Value autoDeleteDuration = 19;
-//  openim.protobuf.Int32Value verifyApprove = 20;
-//  openim.protobuf.Int32Value groupLinkStatus = 21;
-//  openim.protobuf.StringValue groupLink = 22;
-//  openim.protobuf.Int32Value groupLinkEntryVerify = 23;
-//  openim.protobuf.Int32Value editGroupBaseInfo = 24;
-//  openim.protobuf.Int32Value joinGroupApplyNumber = 25;
-//}
 
 message GroupInfoForSet {
   string groupID = 1;
