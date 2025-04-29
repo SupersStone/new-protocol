@@ -48,6 +48,7 @@ message GroupInfo {
   openim.protobuf.Int32Value addMembersStatus = 24;
   openim.protobuf.Int32Value editGroupBaseInfo = 25;
   openim.protobuf.Int32Value sendMessageStatus = 26;
+  openim.protobuf.Int32Value verifyApprove = 27;
 }
 
 message GroupInfoForSet {
