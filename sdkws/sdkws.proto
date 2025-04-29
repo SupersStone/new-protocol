@@ -39,16 +39,17 @@ message GroupInfo {
   int32 applyMemberFriend = 15;
   int64 notificationUpdateTime = 16;
   string notificationUserID = 17;
-  openim.protobuf.Int32Value joinGroupApplyNumber = 18;
-  openim.protobuf.Int32Value autoDeleteMsg = 19;
-  openim.protobuf.Int32Value autoDeleteDuration = 20;
-  openim.protobuf.Int32Value groupLinkStatus = 21;
-  openim.protobuf.StringValue groupLink = 22;
-  openim.protobuf.Int32Value groupLinkEntryVerify = 23;
-  openim.protobuf.Int32Value addMembersStatus = 24;
-  openim.protobuf.Int32Value editGroupBaseInfo = 25;
-  openim.protobuf.Int32Value sendMessageStatus = 26;
-  openim.protobuf.Int32Value verifyApprove = 27;
+  openim.protobuf.Int32Value verifyApprove = 18;
+  openim.protobuf.Int32Value joinGroupApplyNumber = 19;
+  openim.protobuf.Int32Value autoDeleteMsg = 20;
+  openim.protobuf.Int32Value autoDeleteDuration = 21;
+  openim.protobuf.Int32Value groupLinkStatus = 22;
+  openim.protobuf.StringValue groupLink = 23;
+  openim.protobuf.Int32Value groupLinkEntryVerify = 24;
+  openim.protobuf.Int32Value addMembersStatus = 25;
+  openim.protobuf.Int32Value editGroupBaseInfo = 26;
+  openim.protobuf.Int32Value sendMessageStatus = 27;
+
 }
 
 message GroupInfoForSet {
