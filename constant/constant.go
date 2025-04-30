@@ -353,6 +353,14 @@ const (
 )
 
 const (
+	AdministratorInvitationJoin = 1 // 管理员邀请
+	InvitedJoin                 = 2 // 被邀请
+	SearchJoin                  = 3 // 搜索加入
+	ScanJoin                    = 4 // 扫码加入
+	GroupLinkJoin               = 5 // 群链接加入
+)
+
+const (
 	MemberEditGroupBaseInfo = 0 // 群成员可编辑基础信息
 	AdminEditGroupBaseInfo  = 1 // 管理员可以编辑群基础信息
 )
