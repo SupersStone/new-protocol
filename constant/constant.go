@@ -349,6 +349,10 @@ const (
 )
 
 const (
+	CloseGroupLinkEntryVerify = 0 // 群组链接审核 关闭
+)
+
+const (
 	MemberEditGroupBaseInfo = 0 // 群成员可编辑基础信息
 	AdminEditGroupBaseInfo  = 1 // 管理员可以编辑群基础信息
 )
