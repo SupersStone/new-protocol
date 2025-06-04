@@ -104,6 +104,8 @@ const (
 	CloseGroupLinkAdministratorApproval       = 1527
 	UpdatingPermissionsMembershipRestrictions = 1528
 	UpdatePermissionsAdministratorsOnly       = 1529
+	EnableGroupDelete                         = 1530
+	CloseGroupDelete                          = 1531
 
 	//SignalingNotificationBegin = 1600
 	//SignalingNotification      = 1601
