@@ -31,26 +31,6 @@ message GroupInfo {
   int64 createTime = 7;
   uint32 memberCount = 8;
   string ex = 9;
-  int32 status = 10;
-  string creatorUserID = 11;
-  int32 groupType = 12;
-  int32 needVerification = 13;
-  int32 lookMemberInfo = 14;
-  int32 applyMemberFriend = 15;
-  int64 notificationUpdateTime = 16;
-  string notificationUserID = 17;
-}
-
-message GroupInfo2 {
-  string groupID = 1;
-  string groupName = 2;
-  string notification = 3;
-  string introduction = 4;
-  string faceURL = 5;
-  string ownerUserID = 6;
-  int64 createTime = 7;
-  uint32 memberCount = 8;
-  string ex = 9;
   openim.protobuf.Int32Value status = 10;
   string creatorUserID = 11;
   int32 groupType = 12;
