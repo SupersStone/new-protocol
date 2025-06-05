@@ -106,6 +106,8 @@ const (
 	UpdatePermissionsAdministratorsOnly       = 1529
 	EnableGroupDelete                         = 1530
 	CloseGroupDelete                          = 1531
+	UpdatingPerMemberForEditGroupBaseInfo     = 1532
+	UpdatePerAdminiOnlyForEditGroupBaseInfo   = 1533
 
 	//SignalingNotificationBegin = 1600
 	//SignalingNotification      = 1601
