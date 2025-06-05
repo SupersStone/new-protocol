@@ -45,9 +45,6 @@ message GetGroupsInfoReq {
 message GetGroupsInfoResp {
   repeated openim.sdkws.GroupInfo groupInfos = 1;
 }
-message GetGroupsInfoResp2 {
-  repeated openim.sdkws.GroupInfo2 groupInfos = 1;
-}
 
 message SetGroupInfoReq {
   openim.sdkws.GroupInfoForSet groupInfoForSet = 1;
