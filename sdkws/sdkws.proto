@@ -31,6 +31,34 @@ message GroupInfo {
   int64 createTime = 7;
   uint32 memberCount = 8;
   string ex = 9;
+  int32 status = 10;
+  string creatorUserID = 11;
+  int32 groupType = 12;
+  int32 needVerification = 13;
+  int32 lookMemberInfo = 14;
+  int32 applyMemberFriend = 15;
+  int64 notificationUpdateTime = 16;
+  string notificationUserID = 17;
+  openim.protobuf.Int32Value verifyApprove = 18;
+  openim.protobuf.Int32Value joinGroupApplyNumber = 19;
+  openim.protobuf.Int32Value autoDeleteMsg = 20;
+  openim.protobuf.Int32Value autoDeleteDuration = 21;
+  openim.protobuf.Int32Value groupLinkStatus = 22;
+  openim.protobuf.StringValue groupLink = 23;
+  openim.protobuf.Int32Value groupLinkEntryVerify = 24;
+  openim.protobuf.Int32Value editGroupBaseInfo = 25;
+}
+
+message GroupInfo2 {
+  string groupID = 1;
+  string groupName = 2;
+  string notification = 3;
+  string introduction = 4;
+  string faceURL = 5;
+  string ownerUserID = 6;
+  int64 createTime = 7;
+  uint32 memberCount = 8;
+  string ex = 9;
   openim.protobuf.Int32Value status = 10;
   string creatorUserID = 11;
   int32 groupType = 12;
@@ -46,9 +74,7 @@ message GroupInfo {
   openim.protobuf.Int32Value groupLinkStatus = 22;
   openim.protobuf.StringValue groupLink = 23;
   openim.protobuf.Int32Value groupLinkEntryVerify = 24;
-  openim.protobuf.Int32Value addMembersStatus = 25;
-  openim.protobuf.Int32Value editGroupBaseInfo = 26;
-  openim.protobuf.Int32Value sendMessageStatus = 27;
+  openim.protobuf.Int32Value editGroupBaseInfo = 25;
 }
 
 message GroupInfoForSet {
