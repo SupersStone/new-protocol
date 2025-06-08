@@ -108,6 +108,7 @@ const (
 	CloseGroupDelete                          = 1531
 	UpdatingPerMemberForEditGroupBaseInfo     = 1532
 	UpdatePerAdminiOnlyForEditGroupBaseInfo   = 1533
+	UpdateGroupMemberBlock                    = 1534
 
 	//SignalingNotificationBegin = 1600
 	//SignalingNotification      = 1601
