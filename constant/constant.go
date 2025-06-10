@@ -122,6 +122,7 @@ const (
 	ConversationUnreadNotification      = 1702
 	ClearConversationNotification       = 1703
 	UpdateGroupMemberBlockNotification  = 1704
+	DeleteGroupMemberBlockNotification  = 1705
 
 	BusinessNotificationBegin = 2000
 	BusinessNotification      = 2001
