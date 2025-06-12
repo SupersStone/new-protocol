@@ -109,6 +109,9 @@ const (
 	UpdatingPerMemberForEditGroupBaseInfo     = 1532
 	UpdatePerAdminiOnlyForEditGroupBaseInfo   = 1533
 
+	UpdateGroupMemberBlockNotification = 1540
+	DeleteGroupMemberBlockNotification = 1541
+
 	//SignalingNotificationBegin = 1600
 	//SignalingNotification      = 1601
 	//SignalingNotificationEnd   = 1649
@@ -121,8 +124,6 @@ const (
 	ConversationPrivateChatNotification = 1701
 	ConversationUnreadNotification      = 1702
 	ClearConversationNotification       = 1703
-	UpdateGroupMemberBlockNotification  = 1704
-	DeleteGroupMemberBlockNotification  = 1705
 
 	BusinessNotificationBegin = 2000
 	BusinessNotification      = 2001
