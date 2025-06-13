@@ -213,11 +213,11 @@ message GroupMemberBlock {
   int64 CreateTime = 4;
   string OperatorUserID = 5;
   string Ex = 6;
-  string OwnerUserName = 7;
-  string BlockUserName = 8;
-  string BlockFaceUrl = 9;
-  string BlockSurName = 10;
-  string BlockName = 11;
+  openim.protobuf.StringValue OwnerUserName = 7;
+  openim.protobuf.StringValue BlockUserName = 8;
+  openim.protobuf.StringValue BlockFaceUrl = 9;
+  openim.protobuf.StringValue BlockSurName = 10;
+  openim.protobuf.StringValue BlockName = 11;
 }
 
 message GroupMemberBlocksResp {
