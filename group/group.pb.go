@@ -1023,10 +1023,11 @@ func (*TransferGroupOwnerResp) Descriptor() ([]byte, []int) {
 
 type GetGroupRelationByUserReq struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	GroupID       string                 `protobuf:"bytes,2,opt,name=groupID,proto3" json:"groupID,omitempty"`
-	Timestamp     string                 `protobuf:"bytes,3,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
-	Signature     string                 `protobuf:"bytes,4,opt,name=signature,proto3" json:"signature,omitempty"`
-	UserID        string                 `protobuf:"bytes,5,opt,name=userID,proto3" json:"userID,omitempty"`
+	GroupID       string                 `protobuf:"bytes,1,opt,name=groupID,proto3" json:"groupID,omitempty"`
+	Timestamp     string                 `protobuf:"bytes,2,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	Signature     string                 `protobuf:"bytes,3,opt,name=signature,proto3" json:"signature,omitempty"`
+	UserID        string                 `protobuf:"bytes,4,opt,name=userID,proto3" json:"userID,omitempty"`
+	RequestURL    string                 `protobuf:"bytes,5,opt,name=requestURL,proto3" json:"requestURL,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1085,6 +1086,13 @@ func (x *GetGroupRelationByUserReq) GetSignature() string {
 func (x *GetGroupRelationByUserReq) GetUserID() string {
 	if x != nil {
 		return x.UserID
+	}
+	return ""
+}
+
+func (x *GetGroupRelationByUserReq) GetRequestURL() string {
+	if x != nil {
+		return x.RequestURL
 	}
 	return ""
 }
@@ -5244,12 +5252,15 @@ const file_group_group_proto_rawDesc = "" +
 	"\agroupID\x18\x01 \x01(\tR\agroupID\x12&\n" +
 	"\x0eoldOwnerUserID\x18\x02 \x01(\tR\x0eoldOwnerUserID\x12&\n" +
 	"\x0enewOwnerUserID\x18\x03 \x01(\tR\x0enewOwnerUserID\"\x18\n" +
-	"\x16TransferGroupOwnerResp\"\x89\x01\n" +
+	"\x16TransferGroupOwnerResp\"\xa9\x01\n" +
 	"\x19GetGroupRelationByUserReq\x12\x18\n" +
-	"\agroupID\x18\x02 \x01(\tR\agroupID\x12\x1c\n" +
-	"\ttimestamp\x18\x03 \x01(\tR\ttimestamp\x12\x1c\n" +
-	"\tsignature\x18\x04 \x01(\tR\tsignature\x12\x16\n" +
-	"\x06userID\x18\x05 \x01(\tR\x06userID\"\xbc\x01\n" +
+	"\agroupID\x18\x01 \x01(\tR\agroupID\x12\x1c\n" +
+	"\ttimestamp\x18\x02 \x01(\tR\ttimestamp\x12\x1c\n" +
+	"\tsignature\x18\x03 \x01(\tR\tsignature\x12\x16\n" +
+	"\x06userID\x18\x04 \x01(\tR\x06userID\x12\x1e\n" +
+	"\n" +
+	"requestURL\x18\x05 \x01(\tR\n" +
+	"requestURL\"\xbc\x01\n" +
 	"\x1aGetGroupRelationByUserResp\x12 \n" +
 	"\vgroupStatus\x18\x01 \x01(\x05R\vgroupStatus\x12\"\n" +
 	"\fgroupMessage\x18\x02 \x01(\tR\fgroupMessage\x12\x18\n" +

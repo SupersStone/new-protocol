@@ -109,10 +109,11 @@ message TransferGroupOwnerReq {
 message TransferGroupOwnerResp {}
 
 message GetGroupRelationByUserReq {
-  string groupID = 2;
-  string timestamp = 3;
-  string signature = 4;
-  string userID = 5;
+  string groupID = 1;
+  string timestamp = 2;
+  string signature = 3;
+  string userID = 4;
+  string requestURL=5;
 }
 message GetGroupRelationByUserResp {
   int32 groupStatus = 1;
