@@ -74,6 +74,7 @@ message SetGroupInfoExResp {}
 message GetGroupApplicationListReq {
   openim.sdkws.RequestPagination pagination = 1;
   string fromUserID = 2; //owner or admin
+  string groupID = 3;
 }
 message GetGroupApplicationListResp {
   uint32 total = 1;
@@ -219,6 +220,21 @@ message GroupMemberBlocksReq {
 //  openim.protobuf.StringValue BlockSurName = 10;
 //  openim.protobuf.StringValue BlockName = 11;
 //}
+
+//message GroupMemberBlock {
+//  string GroupID = 1 [json_name = "GroupID"];
+//  string OwnerUserID = 2 [json_name = "OwnerUserID"];
+//  string BlockUserID = 3 [json_name = "BlockUserID"];
+//  int64 CreateTime = 4 [json_name = "CreateTime"];
+//  string OperatorUserID = 5 [json_name = "OperatorUserID"];
+//  string Ex = 6 [json_name = "Ex"];
+//  string OwnerUserName = 7 [json_name = "OwnerUserName"];
+//  string BlockUserName = 8 [json_name = "BlockUserName"];
+//  string BlockFaceUrl = 9 [json_name = "BlockFaceUrl"];
+//  string BlockSurName = 10 [json_name = "BlockSurName"];
+//  string BlockName = 11 [json_name = "BlockName"];
+//}
+
 
 message GroupMemberBlock {
   string GroupID = 1 [json_name = "GroupID"];

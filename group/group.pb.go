@@ -609,6 +609,7 @@ type GetGroupApplicationListReq struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
 	Pagination    *sdkws.RequestPagination `protobuf:"bytes,1,opt,name=pagination,proto3" json:"pagination,omitempty"`
 	FromUserID    string                   `protobuf:"bytes,2,opt,name=fromUserID,proto3" json:"fromUserID,omitempty"` //owner or admin
+	GroupID       string                   `protobuf:"bytes,3,opt,name=groupID,proto3" json:"groupID,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -653,6 +654,13 @@ func (x *GetGroupApplicationListReq) GetPagination() *sdkws.RequestPagination {
 func (x *GetGroupApplicationListReq) GetFromUserID() string {
 	if x != nil {
 		return x.FromUserID
+	}
+	return ""
+}
+
+func (x *GetGroupApplicationListReq) GetGroupID() string {
+	if x != nil {
+		return x.GroupID
 	}
 	return ""
 }
@@ -5206,14 +5214,15 @@ const file_group_group_proto_rawDesc = "" +
 	"\x14groupLinkEntryVerify\x18\r \x01(\v2\x1b.openim.protobuf.Int32ValueR\x14groupLinkEntryVerify\x12A\n" +
 	"\rautoDeleteMsg\x18\x0e \x01(\v2\x1b.openim.protobuf.Int32ValueR\rautoDeleteMsg\x12K\n" +
 	"\x12autoDeleteDuration\x18\x0f \x01(\v2\x1b.openim.protobuf.Int32ValueR\x12autoDeleteDuration\"\x14\n" +
-	"\x12SetGroupInfoExResp\"}\n" +
+	"\x12SetGroupInfoExResp\"\x97\x01\n" +
 	"\x1aGetGroupApplicationListReq\x12?\n" +
 	"\n" +
 	"pagination\x18\x01 \x01(\v2\x1f.openim.sdkws.RequestPaginationR\n" +
 	"pagination\x12\x1e\n" +
 	"\n" +
 	"fromUserID\x18\x02 \x01(\tR\n" +
-	"fromUserID\"u\n" +
+	"fromUserID\x12\x18\n" +
+	"\agroupID\x18\x03 \x01(\tR\agroupID\"u\n" +
 	"\x1bGetGroupApplicationListResp\x12\x14\n" +
 	"\x05total\x18\x01 \x01(\rR\x05total\x12@\n" +
 	"\rgroupRequests\x18\x02 \x03(\v2\x1a.openim.sdkws.GroupRequestR\rgroupRequests\"w\n" +
