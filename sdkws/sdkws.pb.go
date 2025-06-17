@@ -565,6 +565,8 @@ type PublicUserInfo struct {
 	Nickname      string                 `protobuf:"bytes,2,opt,name=nickname,proto3" json:"nickname,omitempty"`
 	FaceURL       string                 `protobuf:"bytes,3,opt,name=faceURL,proto3" json:"faceURL,omitempty"`
 	Ex            string                 `protobuf:"bytes,4,opt,name=ex,proto3" json:"ex,omitempty"`
+	SurName       string                 `protobuf:"bytes,5,opt,name=surName,proto3" json:"surName,omitempty"`
+	Name          string                 `protobuf:"bytes,6,opt,name=name,proto3" json:"name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -623,6 +625,20 @@ func (x *PublicUserInfo) GetFaceURL() string {
 func (x *PublicUserInfo) GetEx() string {
 	if x != nil {
 		return x.Ex
+	}
+	return ""
+}
+
+func (x *PublicUserInfo) GetSurName() string {
+	if x != nil {
+		return x.SurName
+	}
+	return ""
+}
+
+func (x *PublicUserInfo) GetName() string {
+	if x != nil {
+		return x.Name
 	}
 	return ""
 }
@@ -6034,12 +6050,14 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"\x02ex\x18\n" +
 	" \x01(\tR\x02ex\x12 \n" +
 	"\vmuteEndTime\x18\v \x01(\x03R\vmuteEndTime\x12$\n" +
-	"\rinviterUserID\x18\f \x01(\tR\rinviterUserID\"n\n" +
+	"\rinviterUserID\x18\f \x01(\tR\rinviterUserID\"\x9c\x01\n" +
 	"\x0ePublicUserInfo\x12\x16\n" +
 	"\x06userID\x18\x01 \x01(\tR\x06userID\x12\x1a\n" +
 	"\bnickname\x18\x02 \x01(\tR\bnickname\x12\x18\n" +
 	"\afaceURL\x18\x03 \x01(\tR\afaceURL\x12\x0e\n" +
-	"\x02ex\x18\x04 \x01(\tR\x02ex\"\xea\x02\n" +
+	"\x02ex\x18\x04 \x01(\tR\x02ex\x12\x18\n" +
+	"\asurName\x18\x05 \x01(\tR\asurName\x12\x12\n" +
+	"\x04name\x18\x06 \x01(\tR\x04name\"\xea\x02\n" +
 	"\bUserInfo\x12\x16\n" +
 	"\x06userID\x18\x01 \x01(\tR\x06userID\x12\x1a\n" +
 	"\bnickname\x18\x02 \x01(\tR\bnickname\x12\x18\n" +

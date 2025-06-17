@@ -81,6 +81,8 @@ message PublicUserInfo {
   string nickname = 2;
   string faceURL = 3;
   string ex = 4;
+  string surName = 5;
+  string name = 6;
 }
 
 message UserInfo {
