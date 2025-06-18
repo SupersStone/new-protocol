@@ -1104,6 +1104,7 @@ type GetGroupRelationByUserResp struct {
 	FaceUrl       string                 `protobuf:"bytes,3,opt,name=faceUrl,proto3" json:"faceUrl,omitempty"`
 	GroupName     string                 `protobuf:"bytes,4,opt,name=groupName,proto3" json:"groupName,omitempty"`
 	MemberCount   int32                  `protobuf:"varint,5,opt,name=memberCount,proto3" json:"memberCount,omitempty"`
+	ApplyTime     int32                  `protobuf:"varint,6,opt,name=applyTime,proto3" json:"applyTime,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1169,6 +1170,13 @@ func (x *GetGroupRelationByUserResp) GetGroupName() string {
 func (x *GetGroupRelationByUserResp) GetMemberCount() int32 {
 	if x != nil {
 		return x.MemberCount
+	}
+	return 0
+}
+
+func (x *GetGroupRelationByUserResp) GetApplyTime() int32 {
+	if x != nil {
+		return x.ApplyTime
 	}
 	return 0
 }
@@ -5260,13 +5268,14 @@ const file_group_group_proto_rawDesc = "" +
 	"\x06userID\x18\x04 \x01(\tR\x06userID\x12\x1e\n" +
 	"\n" +
 	"requestURL\x18\x05 \x01(\tR\n" +
-	"requestURL\"\xbc\x01\n" +
+	"requestURL\"\xda\x01\n" +
 	"\x1aGetGroupRelationByUserResp\x12 \n" +
 	"\vgroupStatus\x18\x01 \x01(\x05R\vgroupStatus\x12\"\n" +
 	"\fgroupMessage\x18\x02 \x01(\tR\fgroupMessage\x12\x18\n" +
 	"\afaceUrl\x18\x03 \x01(\tR\afaceUrl\x12\x1c\n" +
 	"\tgroupName\x18\x04 \x01(\tR\tgroupName\x12 \n" +
-	"\vmemberCount\x18\x05 \x01(\x05R\vmemberCount\"\x9e\x01\n" +
+	"\vmemberCount\x18\x05 \x01(\x05R\vmemberCount\x12\x1c\n" +
+	"\tapplyTime\x18\x06 \x01(\x05R\tapplyTime\"\x9e\x01\n" +
 	"\fJoinGroupReq\x12\x18\n" +
 	"\agroupID\x18\x01 \x01(\tR\agroupID\x12\x1e\n" +
 	"\n" +

@@ -121,6 +121,7 @@ message GetGroupRelationByUserResp {
   string faceUrl = 3;
   string groupName = 4;
   int32 memberCount = 5;
+  int32 applyTime = 6;
 }
 
 message JoinGroupReq {
