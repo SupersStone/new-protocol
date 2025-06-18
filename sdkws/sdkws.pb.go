@@ -655,8 +655,6 @@ type UserInfo struct {
 	AllowSendMessages     int32                  `protobuf:"varint,8,opt,name=allowSendMessages,proto3" json:"allowSendMessages,omitempty"`
 	AllowVoiceCalls       int32                  `protobuf:"varint,9,opt,name=allowVoiceCalls,proto3" json:"allowVoiceCalls,omitempty"`
 	AllowGroupInvitations int32                  `protobuf:"varint,10,opt,name=allowGroupInvitations,proto3" json:"allowGroupInvitations,omitempty"`
-	SurName               string                 `protobuf:"bytes,11,opt,name=surName,proto3" json:"surName,omitempty"`
-	Name                  string                 `protobuf:"bytes,12,opt,name=name,proto3" json:"name,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -759,20 +757,6 @@ func (x *UserInfo) GetAllowGroupInvitations() int32 {
 		return x.AllowGroupInvitations
 	}
 	return 0
-}
-
-func (x *UserInfo) GetSurName() string {
-	if x != nil {
-		return x.SurName
-	}
-	return ""
-}
-
-func (x *UserInfo) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
 }
 
 type UserInfoWithEx struct {
@@ -6073,7 +6057,7 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"\afaceURL\x18\x03 \x01(\tR\afaceURL\x12\x0e\n" +
 	"\x02ex\x18\x04 \x01(\tR\x02ex\x12\x18\n" +
 	"\asurName\x18\x05 \x01(\tR\asurName\x12\x12\n" +
-	"\x04name\x18\x06 \x01(\tR\x04name\"\x98\x03\n" +
+	"\x04name\x18\x06 \x01(\tR\x04name\"\xea\x02\n" +
 	"\bUserInfo\x12\x16\n" +
 	"\x06userID\x18\x01 \x01(\tR\x06userID\x12\x1a\n" +
 	"\bnickname\x18\x02 \x01(\tR\bnickname\x12\x18\n" +
@@ -6087,9 +6071,7 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"\x11allowSendMessages\x18\b \x01(\x05R\x11allowSendMessages\x12(\n" +
 	"\x0fallowVoiceCalls\x18\t \x01(\x05R\x0fallowVoiceCalls\x124\n" +
 	"\x15allowGroupInvitations\x18\n" +
-	" \x01(\x05R\x15allowGroupInvitations\x12\x18\n" +
-	"\asurName\x18\v \x01(\tR\asurName\x12\x12\n" +
-	"\x04name\x18\f \x01(\tR\x04name\"\x91\x02\n" +
+	" \x01(\x05R\x15allowGroupInvitations\"\x91\x02\n" +
 	"\x0eUserInfoWithEx\x12\x16\n" +
 	"\x06userID\x18\x01 \x01(\tR\x06userID\x128\n" +
 	"\bnickname\x18\x02 \x01(\v2\x1c.openim.protobuf.StringValueR\bnickname\x126\n" +

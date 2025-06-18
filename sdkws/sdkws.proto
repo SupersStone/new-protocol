@@ -96,8 +96,6 @@ message UserInfo {
   int32 allowSendMessages = 8;
   int32 allowVoiceCalls = 9;
   int32 allowGroupInvitations = 10;
-  string surName = 11;
-  string name = 12;
 }
 
 message UserInfoWithEx {
