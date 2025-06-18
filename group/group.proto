@@ -125,7 +125,7 @@ message GroupRelationByUser {
 }
 
 message GetGroupRelationByUserResp {
-  openim.group.GroupRelationByUser groupInfos = 1;
+  openim.group.GroupRelationByUser groupRelation = 1;
 }
 
 message JoinGroupReq {

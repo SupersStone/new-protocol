@@ -1175,7 +1175,7 @@ func (x *GroupRelationByUser) GetMemberCount() int32 {
 
 type GetGroupRelationByUserResp struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	GroupInfos    *GroupRelationByUser   `protobuf:"bytes,1,opt,name=groupInfos,proto3" json:"groupInfos,omitempty"`
+	GroupRelation *GroupRelationByUser   `protobuf:"bytes,1,opt,name=groupRelation,proto3" json:"groupRelation,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1210,9 +1210,9 @@ func (*GetGroupRelationByUserResp) Descriptor() ([]byte, []int) {
 	return file_group_group_proto_rawDescGZIP(), []int{20}
 }
 
-func (x *GetGroupRelationByUserResp) GetGroupInfos() *GroupRelationByUser {
+func (x *GetGroupRelationByUserResp) GetGroupRelation() *GroupRelationByUser {
 	if x != nil {
-		return x.GroupInfos
+		return x.GroupRelation
 	}
 	return nil
 }
@@ -5310,11 +5310,9 @@ const file_group_group_proto_rawDesc = "" +
 	"\fgroupMessage\x18\x02 \x01(\tR\fgroupMessage\x12\x18\n" +
 	"\afaceUrl\x18\x03 \x01(\tR\afaceUrl\x12\x1c\n" +
 	"\tgroupName\x18\x04 \x01(\tR\tgroupName\x12 \n" +
-	"\vmemberCount\x18\x05 \x01(\x05R\vmemberCount\"_\n" +
-	"\x1aGetGroupRelationByUserResp\x12A\n" +
-	"\n" +
-	"groupInfos\x18\x01 \x01(\v2!.openim.group.GroupRelationByUserR\n" +
-	"groupInfos\"\x9e\x01\n" +
+	"\vmemberCount\x18\x05 \x01(\x05R\vmemberCount\"e\n" +
+	"\x1aGetGroupRelationByUserResp\x12G\n" +
+	"\rgroupRelation\x18\x01 \x01(\v2!.openim.group.GroupRelationByUserR\rgroupRelation\"\x9e\x01\n" +
 	"\fJoinGroupReq\x12\x18\n" +
 	"\agroupID\x18\x01 \x01(\tR\agroupID\x12\x1e\n" +
 	"\n" +
@@ -5778,7 +5776,7 @@ var file_group_group_proto_depIdxs = []int32{
 	105, // 21: openim.group.GetUserReqApplicationListReq.pagination:type_name -> openim.sdkws.RequestPagination
 	106, // 22: openim.group.GetUserReqApplicationListResp.groupRequests:type_name -> openim.sdkws.GroupRequest
 	106, // 23: openim.group.GetSpecifiedUserGroupRequestInfoResp.groupRequests:type_name -> openim.sdkws.GroupRequest
-	19,  // 24: openim.group.GetGroupRelationByUserResp.groupInfos:type_name -> openim.group.GroupRelationByUser
+	19,  // 24: openim.group.GetGroupRelationByUserResp.groupRelation:type_name -> openim.group.GroupRelationByUser
 	105, // 25: openim.group.GetGroupMemberListReq.pagination:type_name -> openim.sdkws.RequestPagination
 	107, // 26: openim.group.GetGroupMemberListResp.members:type_name -> openim.sdkws.GroupMemberFullInfo
 	107, // 27: openim.group.GetGroupMembersInfoResp.members:type_name -> openim.sdkws.GroupMemberFullInfo
