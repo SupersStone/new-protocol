@@ -115,17 +115,12 @@ message GetGroupRelationByUserReq {
   string userID = 4;
   string requestURL=5;
 }
-
-message GroupRelationByUser {
+message GetGroupRelationByUserResp {
   int32 groupStatus = 1;
   string groupMessage = 2;
   string faceUrl = 3;
   string groupName = 4;
   int32 memberCount = 5;
-}
-
-message GetGroupRelationByUserResp {
-  openim.group.GroupRelationByUser groupRelation = 1;
 }
 
 message JoinGroupReq {
