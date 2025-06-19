@@ -122,6 +122,7 @@ message GetGroupRelationByUserResp {
   string groupName = 4;
   int32 memberCount = 5;
   int32 applyTime = 6;
+  string groupId = 7;
 }
 
 message JoinGroupReq {
