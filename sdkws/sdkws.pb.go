@@ -644,21 +644,22 @@ func (x *PublicUserInfo) GetName() string {
 }
 
 type UserInfo struct {
-	state                 protoimpl.MessageState `protogen:"open.v1"`
-	UserID                string                 `protobuf:"bytes,1,opt,name=userID,proto3" json:"userID,omitempty"`
-	Nickname              string                 `protobuf:"bytes,2,opt,name=nickname,proto3" json:"nickname,omitempty"`
-	FaceURL               string                 `protobuf:"bytes,3,opt,name=faceURL,proto3" json:"faceURL,omitempty"`
-	Ex                    string                 `protobuf:"bytes,4,opt,name=ex,proto3" json:"ex,omitempty"`
-	CreateTime            int64                  `protobuf:"varint,5,opt,name=createTime,proto3" json:"createTime,omitempty"`
-	AppMangerLevel        int32                  `protobuf:"varint,6,opt,name=appMangerLevel,proto3" json:"appMangerLevel,omitempty"`
-	GlobalRecvMsgOpt      int32                  `protobuf:"varint,7,opt,name=globalRecvMsgOpt,proto3" json:"globalRecvMsgOpt,omitempty"`
-	AllowSendMessages     int32                  `protobuf:"varint,8,opt,name=allowSendMessages,proto3" json:"allowSendMessages,omitempty"`
-	AllowVoiceCalls       int32                  `protobuf:"varint,9,opt,name=allowVoiceCalls,proto3" json:"allowVoiceCalls,omitempty"`
-	AllowGroupInvitations int32                  `protobuf:"varint,10,opt,name=allowGroupInvitations,proto3" json:"allowGroupInvitations,omitempty"`
-	SurName               string                 `protobuf:"bytes,11,opt,name=surName,proto3" json:"surName,omitempty"`
-	Name                  string                 `protobuf:"bytes,12,opt,name=name,proto3" json:"name,omitempty"`
-	unknownFields         protoimpl.UnknownFields
-	sizeCache             protoimpl.SizeCache
+	state                   protoimpl.MessageState `protogen:"open.v1"`
+	UserID                  string                 `protobuf:"bytes,1,opt,name=userID,proto3" json:"userID,omitempty"`
+	Nickname                string                 `protobuf:"bytes,2,opt,name=nickname,proto3" json:"nickname,omitempty"`
+	FaceURL                 string                 `protobuf:"bytes,3,opt,name=faceURL,proto3" json:"faceURL,omitempty"`
+	Ex                      string                 `protobuf:"bytes,4,opt,name=ex,proto3" json:"ex,omitempty"`
+	CreateTime              int64                  `protobuf:"varint,5,opt,name=createTime,proto3" json:"createTime,omitempty"`
+	AppMangerLevel          int32                  `protobuf:"varint,6,opt,name=appMangerLevel,proto3" json:"appMangerLevel,omitempty"`
+	GlobalRecvMsgOpt        int32                  `protobuf:"varint,7,opt,name=globalRecvMsgOpt,proto3" json:"globalRecvMsgOpt,omitempty"`
+	SurName                 string                 `protobuf:"bytes,8,opt,name=surName,proto3" json:"surName,omitempty"`
+	Name                    string                 `protobuf:"bytes,9,opt,name=name,proto3" json:"name,omitempty"`
+	AllowViewLastOnlineTime int32                  `protobuf:"varint,10,opt,name=allowViewLastOnlineTime,proto3" json:"allowViewLastOnlineTime,omitempty"`
+	AllowSendMessages       int32                  `protobuf:"varint,11,opt,name=allowSendMessages,proto3" json:"allowSendMessages,omitempty"`
+	AllowVoiceCalls         int32                  `protobuf:"varint,12,opt,name=allowVoiceCalls,proto3" json:"allowVoiceCalls,omitempty"`
+	AllowGroupInvitations   int32                  `protobuf:"varint,13,opt,name=allowGroupInvitations,proto3" json:"allowGroupInvitations,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
 }
 
 func (x *UserInfo) Reset() {
@@ -740,6 +741,27 @@ func (x *UserInfo) GetGlobalRecvMsgOpt() int32 {
 	return 0
 }
 
+func (x *UserInfo) GetSurName() string {
+	if x != nil {
+		return x.SurName
+	}
+	return ""
+}
+
+func (x *UserInfo) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *UserInfo) GetAllowViewLastOnlineTime() int32 {
+	if x != nil {
+		return x.AllowViewLastOnlineTime
+	}
+	return 0
+}
+
 func (x *UserInfo) GetAllowSendMessages() int32 {
 	if x != nil {
 		return x.AllowSendMessages
@@ -759,20 +781,6 @@ func (x *UserInfo) GetAllowGroupInvitations() int32 {
 		return x.AllowGroupInvitations
 	}
 	return 0
-}
-
-func (x *UserInfo) GetSurName() string {
-	if x != nil {
-		return x.SurName
-	}
-	return ""
-}
-
-func (x *UserInfo) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
 }
 
 type UserInfoWithEx struct {
@@ -6073,7 +6081,7 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"\afaceURL\x18\x03 \x01(\tR\afaceURL\x12\x0e\n" +
 	"\x02ex\x18\x04 \x01(\tR\x02ex\x12\x18\n" +
 	"\asurName\x18\x05 \x01(\tR\asurName\x12\x12\n" +
-	"\x04name\x18\x06 \x01(\tR\x04name\"\x98\x03\n" +
+	"\x04name\x18\x06 \x01(\tR\x04name\"\xd2\x03\n" +
 	"\bUserInfo\x12\x16\n" +
 	"\x06userID\x18\x01 \x01(\tR\x06userID\x12\x1a\n" +
 	"\bnickname\x18\x02 \x01(\tR\bnickname\x12\x18\n" +
@@ -6083,13 +6091,14 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"createTime\x18\x05 \x01(\x03R\n" +
 	"createTime\x12&\n" +
 	"\x0eappMangerLevel\x18\x06 \x01(\x05R\x0eappMangerLevel\x12*\n" +
-	"\x10globalRecvMsgOpt\x18\a \x01(\x05R\x10globalRecvMsgOpt\x12,\n" +
-	"\x11allowSendMessages\x18\b \x01(\x05R\x11allowSendMessages\x12(\n" +
-	"\x0fallowVoiceCalls\x18\t \x01(\x05R\x0fallowVoiceCalls\x124\n" +
-	"\x15allowGroupInvitations\x18\n" +
-	" \x01(\x05R\x15allowGroupInvitations\x12\x18\n" +
-	"\asurName\x18\v \x01(\tR\asurName\x12\x12\n" +
-	"\x04name\x18\f \x01(\tR\x04name\"\x91\x02\n" +
+	"\x10globalRecvMsgOpt\x18\a \x01(\x05R\x10globalRecvMsgOpt\x12\x18\n" +
+	"\asurName\x18\b \x01(\tR\asurName\x12\x12\n" +
+	"\x04name\x18\t \x01(\tR\x04name\x128\n" +
+	"\x17allowViewLastOnlineTime\x18\n" +
+	" \x01(\x05R\x17allowViewLastOnlineTime\x12,\n" +
+	"\x11allowSendMessages\x18\v \x01(\x05R\x11allowSendMessages\x12(\n" +
+	"\x0fallowVoiceCalls\x18\f \x01(\x05R\x0fallowVoiceCalls\x124\n" +
+	"\x15allowGroupInvitations\x18\r \x01(\x05R\x15allowGroupInvitations\"\x91\x02\n" +
 	"\x0eUserInfoWithEx\x12\x16\n" +
 	"\x06userID\x18\x01 \x01(\tR\x06userID\x128\n" +
 	"\bnickname\x18\x02 \x01(\v2\x1c.openim.protobuf.StringValueR\bnickname\x126\n" +
