@@ -276,6 +276,7 @@ message InviteUserToGroupReq {
 }
 message InviteUserToGroupResp {
   repeated openim.sdkws.UserFullInfo filterUser = 1;
+  repeated openim.sdkws.UserFullInfo blockUser = 2;
 }
 
 message GetGroupAllMemberReq {
