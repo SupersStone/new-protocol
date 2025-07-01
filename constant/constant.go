@@ -357,6 +357,7 @@ const (
 
 const (
 	CloseGroupLinkEntryVerify = 0 // 群组链接审核 关闭
+	OpenGroupLinkEntryVerify  = 1 // 群组链接审核 开启
 )
 
 const (
