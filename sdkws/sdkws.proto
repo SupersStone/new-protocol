@@ -335,6 +335,12 @@ message JoinGroupApplicationTips {
   string reqMsg = 3;
 }
 
+message RevokeGroupApplicationTips {
+  GroupInfo group = 1;
+  PublicUserInfo applicant = 2;
+  string reqMsg = 3;
+}
+
 //	OnQuitGroup()
 //Actively leave the group
 message MemberQuitTips {
