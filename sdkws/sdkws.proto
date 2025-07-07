@@ -106,7 +106,11 @@ message UserInfoWithEx {
   openim.protobuf.StringValue nickname = 2;
   openim.protobuf.StringValue faceURL = 3;
   openim.protobuf.StringValue ex = 4;
-  openim.protobuf.Int32Value globalRecvMsgOpt = 7;
+  openim.protobuf.Int32Value globalRecvMsgOpt = 5;
+  openim.protobuf.Int32Value allowViewLastOnlineTime = 6;
+  openim.protobuf.Int32Value allowSendMessages = 7;
+  openim.protobuf.Int32Value allowVoiceCalls = 8;
+  openim.protobuf.Int32Value allowGroupInvitations = 9;
 }
 
 message FriendInfo {
