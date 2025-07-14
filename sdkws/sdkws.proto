@@ -342,7 +342,9 @@ message JoinGroupApplicationTips {
 message RevokeGroupApplicationTips {
   GroupInfo group = 1;
   PublicUserInfo applicant = 2;
-  string reqMsg = 3;
+  int64 operationTime = 3;
+  uint64 groupMemberVersion = 4;
+  string groupMemberVersionID = 5;
 }
 
 //	OnQuitGroup()

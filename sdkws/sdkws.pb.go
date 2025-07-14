@@ -2895,12 +2895,14 @@ func (x *JoinGroupApplicationTips) GetReqMsg() string {
 }
 
 type RevokeGroupApplicationTips struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Group         *GroupInfo             `protobuf:"bytes,1,opt,name=group,proto3" json:"group,omitempty"`
-	Applicant     *PublicUserInfo        `protobuf:"bytes,2,opt,name=applicant,proto3" json:"applicant,omitempty"`
-	ReqMsg        string                 `protobuf:"bytes,3,opt,name=reqMsg,proto3" json:"reqMsg,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	Group                *GroupInfo             `protobuf:"bytes,1,opt,name=group,proto3" json:"group,omitempty"`
+	Applicant            *PublicUserInfo        `protobuf:"bytes,2,opt,name=applicant,proto3" json:"applicant,omitempty"`
+	OperationTime        int64                  `protobuf:"varint,3,opt,name=operationTime,proto3" json:"operationTime,omitempty"`
+	GroupMemberVersion   uint64                 `protobuf:"varint,4,opt,name=groupMemberVersion,proto3" json:"groupMemberVersion,omitempty"`
+	GroupMemberVersionID string                 `protobuf:"bytes,5,opt,name=groupMemberVersionID,proto3" json:"groupMemberVersionID,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
 }
 
 func (x *RevokeGroupApplicationTips) Reset() {
@@ -2947,9 +2949,23 @@ func (x *RevokeGroupApplicationTips) GetApplicant() *PublicUserInfo {
 	return nil
 }
 
-func (x *RevokeGroupApplicationTips) GetReqMsg() string {
+func (x *RevokeGroupApplicationTips) GetOperationTime() int64 {
 	if x != nil {
-		return x.ReqMsg
+		return x.OperationTime
+	}
+	return 0
+}
+
+func (x *RevokeGroupApplicationTips) GetGroupMemberVersion() uint64 {
+	if x != nil {
+		return x.GroupMemberVersion
+	}
+	return 0
+}
+
+func (x *RevokeGroupApplicationTips) GetGroupMemberVersionID() string {
+	if x != nil {
+		return x.GroupMemberVersionID
 	}
 	return ""
 }
@@ -6430,11 +6446,13 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"\x18JoinGroupApplicationTips\x12-\n" +
 	"\x05group\x18\x01 \x01(\v2\x17.openim.sdkws.GroupInfoR\x05group\x12:\n" +
 	"\tapplicant\x18\x02 \x01(\v2\x1c.openim.sdkws.PublicUserInfoR\tapplicant\x12\x16\n" +
-	"\x06reqMsg\x18\x03 \x01(\tR\x06reqMsg\"\x9f\x01\n" +
+	"\x06reqMsg\x18\x03 \x01(\tR\x06reqMsg\"\x91\x02\n" +
 	"\x1aRevokeGroupApplicationTips\x12-\n" +
 	"\x05group\x18\x01 \x01(\v2\x17.openim.sdkws.GroupInfoR\x05group\x12:\n" +
-	"\tapplicant\x18\x02 \x01(\v2\x1c.openim.sdkws.PublicUserInfoR\tapplicant\x12\x16\n" +
-	"\x06reqMsg\x18\x03 \x01(\tR\x06reqMsg\"\x88\x02\n" +
+	"\tapplicant\x18\x02 \x01(\v2\x1c.openim.sdkws.PublicUserInfoR\tapplicant\x12$\n" +
+	"\roperationTime\x18\x03 \x01(\x03R\roperationTime\x12.\n" +
+	"\x12groupMemberVersion\x18\x04 \x01(\x04R\x12groupMemberVersion\x122\n" +
+	"\x14groupMemberVersionID\x18\x05 \x01(\tR\x14groupMemberVersionID\"\x88\x02\n" +
 	"\x0eMemberQuitTips\x12-\n" +
 	"\x05group\x18\x01 \x01(\v2\x17.openim.sdkws.GroupInfoR\x05group\x12=\n" +
 	"\bquitUser\x18\x02 \x01(\v2!.openim.sdkws.GroupMemberFullInfoR\bquitUser\x12$\n" +
