@@ -29,6 +29,7 @@ message CreateGroupReq {
 message CreateGroupResp {
   openim.sdkws.GroupInfo groupInfo = 1;
   repeated openim.sdkws.UserFullInfo filterUser = 2;
+  repeated openim.sdkws.UserFullInfo blockUser = 3;
 }
 
 message ResetGroupLinkReq {
@@ -277,6 +278,7 @@ message InviteUserToGroupReq {
 message InviteUserToGroupResp {
   repeated openim.sdkws.UserFullInfo filterUser = 1;
   repeated openim.sdkws.UserFullInfo blockUser = 2;
+  repeated openim.sdkws.UserFullInfo banUser = 3;
 }
 
 message GetGroupAllMemberReq {
