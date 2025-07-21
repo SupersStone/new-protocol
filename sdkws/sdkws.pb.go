@@ -658,6 +658,9 @@ type UserInfo struct {
 	AllowSendMessages       int32                  `protobuf:"varint,11,opt,name=allowSendMessages,proto3" json:"allowSendMessages,omitempty"`
 	AllowVoiceCalls         int32                  `protobuf:"varint,12,opt,name=allowVoiceCalls,proto3" json:"allowVoiceCalls,omitempty"`
 	AllowGroupInvitations   int32                  `protobuf:"varint,13,opt,name=allowGroupInvitations,proto3" json:"allowGroupInvitations,omitempty"`
+	AutoDeleteMsg           int32                  `protobuf:"varint,14,opt,name=autoDeleteMsg,proto3" json:"autoDeleteMsg,omitempty"`
+	AutoDeleteDuration      int32                  `protobuf:"varint,15,opt,name=autoDeleteDuration,proto3" json:"autoDeleteDuration,omitempty"`
+	ApplyAllConversation    int32                  `protobuf:"varint,16,opt,name=applyAllConversation,proto3" json:"applyAllConversation,omitempty"`
 	unknownFields           protoimpl.UnknownFields
 	sizeCache               protoimpl.SizeCache
 }
@@ -779,6 +782,27 @@ func (x *UserInfo) GetAllowVoiceCalls() int32 {
 func (x *UserInfo) GetAllowGroupInvitations() int32 {
 	if x != nil {
 		return x.AllowGroupInvitations
+	}
+	return 0
+}
+
+func (x *UserInfo) GetAutoDeleteMsg() int32 {
+	if x != nil {
+		return x.AutoDeleteMsg
+	}
+	return 0
+}
+
+func (x *UserInfo) GetAutoDeleteDuration() int32 {
+	if x != nil {
+		return x.AutoDeleteDuration
+	}
+	return 0
+}
+
+func (x *UserInfo) GetApplyAllConversation() int32 {
+	if x != nil {
+		return x.ApplyAllConversation
 	}
 	return 0
 }
@@ -6213,7 +6237,7 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"\afaceURL\x18\x03 \x01(\tR\afaceURL\x12\x0e\n" +
 	"\x02ex\x18\x04 \x01(\tR\x02ex\x12\x18\n" +
 	"\asurName\x18\x05 \x01(\tR\asurName\x12\x12\n" +
-	"\x04name\x18\x06 \x01(\tR\x04name\"\xd2\x03\n" +
+	"\x04name\x18\x06 \x01(\tR\x04name\"\xdc\x04\n" +
 	"\bUserInfo\x12\x16\n" +
 	"\x06userID\x18\x01 \x01(\tR\x06userID\x12\x1a\n" +
 	"\bnickname\x18\x02 \x01(\tR\bnickname\x12\x18\n" +
@@ -6230,7 +6254,10 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	" \x01(\x05R\x17allowViewLastOnlineTime\x12,\n" +
 	"\x11allowSendMessages\x18\v \x01(\x05R\x11allowSendMessages\x12(\n" +
 	"\x0fallowVoiceCalls\x18\f \x01(\x05R\x0fallowVoiceCalls\x124\n" +
-	"\x15allowGroupInvitations\x18\r \x01(\x05R\x15allowGroupInvitations\"\xae\x06\n" +
+	"\x15allowGroupInvitations\x18\r \x01(\x05R\x15allowGroupInvitations\x12$\n" +
+	"\rautoDeleteMsg\x18\x0e \x01(\x05R\rautoDeleteMsg\x12.\n" +
+	"\x12autoDeleteDuration\x18\x0f \x01(\x05R\x12autoDeleteDuration\x122\n" +
+	"\x14applyAllConversation\x18\x10 \x01(\x05R\x14applyAllConversation\"\xae\x06\n" +
 	"\x0eUserInfoWithEx\x12\x16\n" +
 	"\x06userID\x18\x01 \x01(\tR\x06userID\x128\n" +
 	"\bnickname\x18\x02 \x01(\v2\x1c.openim.protobuf.StringValueR\bnickname\x126\n" +

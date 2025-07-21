@@ -99,6 +99,9 @@ message UserInfo {
   int32 allowSendMessages = 11;
   int32 allowVoiceCalls = 12;
   int32 allowGroupInvitations = 13;
+  int32 autoDeleteMsg = 14;
+  int32 autoDeleteDuration = 15;
+  int32 applyAllConversation = 16;
 }
 
 message UserInfoWithEx {
