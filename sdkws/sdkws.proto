@@ -111,6 +111,9 @@ message UserInfoWithEx {
   openim.protobuf.Int32Value allowSendMessages = 7;
   openim.protobuf.Int32Value allowVoiceCalls = 8;
   openim.protobuf.Int32Value allowGroupInvitations = 9;
+  openim.protobuf.Int32Value autoDeleteMsg = 10;
+  openim.protobuf.Int32Value autoDeleteDuration = 11;
+  openim.protobuf.Int32Value applyAllConversation = 12;
 }
 
 message FriendInfo {
