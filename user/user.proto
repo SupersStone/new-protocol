@@ -336,18 +336,6 @@ message getAllOnlineUsersResp {
   uint64 nextCursor = 2;
 }
 
-message updateReverseBlockReq {
-  string ownerUserId = 1;
-  string blockUserId = 2;
-}
-message updateReverseBlockResp {}
-
-message updateReverseContactReq {
-  string ownerUserId = 1;
-  string contactUserId = 2;
-}
-message updateReverseContactResp {}
-
 service user {
   //Get the specified user information full field
   rpc getDesignateUsers(getDesignateUsersReq) returns (getDesignateUsersResp);
@@ -400,8 +388,4 @@ service user {
   rpc setUserOnlineStatus(setUserOnlineStatusReq) returns (setUserOnlineStatusResp);
   // get all online users
   rpc getAllOnlineUsers(getAllOnlineUsersReq) returns (getAllOnlineUsersResp);
-
-  rpc updateReverseBlock(updateReverseBlockReq) returns (updateReverseBlockResp);
-  rpc updateReverseContact(updateReverseContactReq) returns (updateReverseContactResp);
-
 }
