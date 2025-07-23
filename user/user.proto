@@ -338,7 +338,7 @@ message getAllOnlineUsersResp {
 
 message updateReverseBlockReq {
   string ownerUserId = 1;
-  string contactUserId = 2;
+  string blockUserId = 2;
 }
 message updateReverseBlockResp {}
 
@@ -403,5 +403,5 @@ service user {
 
   rpc updateReverseBlock(updateReverseBlockReq) returns (updateReverseBlockResp);
   rpc updateReverseContact(updateReverseContactReq) returns (updateReverseContactResp);
-  
+
 }

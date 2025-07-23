@@ -3533,7 +3533,7 @@ func (x *GetAllOnlineUsersResp) GetNextCursor() uint64 {
 type UpdateReverseBlockReq struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	OwnerUserId   string                 `protobuf:"bytes,1,opt,name=ownerUserId,proto3" json:"ownerUserId,omitempty"`
-	ContactUserId string                 `protobuf:"bytes,2,opt,name=contactUserId,proto3" json:"contactUserId,omitempty"`
+	BlockUserId   string                 `protobuf:"bytes,2,opt,name=blockUserId,proto3" json:"blockUserId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3575,9 +3575,9 @@ func (x *UpdateReverseBlockReq) GetOwnerUserId() string {
 	return ""
 }
 
-func (x *UpdateReverseBlockReq) GetContactUserId() string {
+func (x *UpdateReverseBlockReq) GetBlockUserId() string {
 	if x != nil {
-		return x.ContactUserId
+		return x.BlockUserId
 	}
 	return ""
 }
@@ -3993,10 +3993,10 @@ const file_user_user_proto_rawDesc = "" +
 	"StatusList\x12\x1e\n" +
 	"\n" +
 	"nextCursor\x18\x02 \x01(\x04R\n" +
-	"nextCursor\"_\n" +
+	"nextCursor\"[\n" +
 	"\x15updateReverseBlockReq\x12 \n" +
-	"\vownerUserId\x18\x01 \x01(\tR\vownerUserId\x12$\n" +
-	"\rcontactUserId\x18\x02 \x01(\tR\rcontactUserId\"\x18\n" +
+	"\vownerUserId\x18\x01 \x01(\tR\vownerUserId\x12 \n" +
+	"\vblockUserId\x18\x02 \x01(\tR\vblockUserId\"\x18\n" +
 	"\x16updateReverseBlockResp\"a\n" +
 	"\x17updateReverseContactReq\x12 \n" +
 	"\vownerUserId\x18\x01 \x01(\tR\vownerUserId\x12$\n" +
