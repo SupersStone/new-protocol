@@ -69,6 +69,8 @@ const (
 	UserCommandUpdateNotification = 1307
 
 	UserSubscribeOnlineStatusNotification = 1308
+	UpdateReverseBlockNotification        = 1309
+	UpdateReverseContactNotification      = 1310
 
 	UserNotificationEnd = 1399
 	OANotification      = 1400
