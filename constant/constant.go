@@ -71,6 +71,7 @@ const (
 	UserSubscribeOnlineStatusNotification = 1308
 	UpdateReverseBlockNotification        = 1309
 	UpdateReverseContactNotification      = 1310
+	UserPrivacyUpdateNotification         = 1311
 
 	UserNotificationEnd = 1399
 	OANotification      = 1400
