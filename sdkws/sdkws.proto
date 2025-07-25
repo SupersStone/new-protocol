@@ -694,3 +694,8 @@ message StreamMsgTips {
   repeated string packets = 4;
   bool end = 5;
 }
+
+message UserPrivacyUpdate {
+  string userID = 1;
+  openim.protobuf.Int32Value allowSendMessages = 2;
+}
