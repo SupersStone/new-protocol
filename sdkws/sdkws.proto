@@ -696,7 +696,8 @@ message StreamMsgTips {
 }
 
 message UserPrivacyUpdate {
-  string userID = 1;
-  openim.protobuf.Int32Value allowSendMessages = 2;
-  string conversationID = 3;
+  string sendUserID = 1;
+  string toUserID = 2;
+  openim.protobuf.Int32Value allowSendMessages = 3;
+  string conversationID = 4;
 }
