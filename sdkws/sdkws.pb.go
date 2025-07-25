@@ -6279,6 +6279,7 @@ type UserPrivacyUpdate struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
 	UserID            string                 `protobuf:"bytes,1,opt,name=userID,proto3" json:"userID,omitempty"`
 	AllowSendMessages *wrapperspb.Int32Value `protobuf:"bytes,2,opt,name=allowSendMessages,proto3" json:"allowSendMessages,omitempty"`
+	ConversationID    string                 `protobuf:"bytes,3,opt,name=conversationID,proto3" json:"conversationID,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -6325,6 +6326,13 @@ func (x *UserPrivacyUpdate) GetAllowSendMessages() *wrapperspb.Int32Value {
 		return x.AllowSendMessages
 	}
 	return nil
+}
+
+func (x *UserPrivacyUpdate) GetConversationID() string {
+	if x != nil {
+		return x.ConversationID
+	}
+	return ""
 }
 
 var File_sdkws_sdkws_proto protoreflect.FileDescriptor
@@ -6928,10 +6936,11 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"startIndex\x18\x03 \x01(\x03R\n" +
 	"startIndex\x12\x18\n" +
 	"\apackets\x18\x04 \x03(\tR\apackets\x12\x10\n" +
-	"\x03end\x18\x05 \x01(\bR\x03end\"v\n" +
+	"\x03end\x18\x05 \x01(\bR\x03end\"\x9e\x01\n" +
 	"\x11UserPrivacyUpdate\x12\x16\n" +
 	"\x06userID\x18\x01 \x01(\tR\x06userID\x12I\n" +
-	"\x11allowSendMessages\x18\x02 \x01(\v2\x1b.openim.protobuf.Int32ValueR\x11allowSendMessages*0\n" +
+	"\x11allowSendMessages\x18\x02 \x01(\v2\x1b.openim.protobuf.Int32ValueR\x11allowSendMessages\x12&\n" +
+	"\x0econversationID\x18\x03 \x01(\tR\x0econversationID*0\n" +
 	"\tPullOrder\x12\x10\n" +
 	"\fPullOrderAsc\x10\x00\x12\x11\n" +
 	"\rPullOrderDesc\x10\x01B+Z)github.com/SupersStone/new-protocol/sdkwsb\x06proto3"
