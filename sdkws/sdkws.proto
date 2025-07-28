@@ -331,6 +331,13 @@ message GroupInfoSetNameTips {
   string groupMemberVersionID = 4;
 }
 
+message GroupKeyVersionTips {
+  string groupID = 1;
+  string version = 2;
+  bytes keyHash = 3;
+  string createTime = 4;
+}
+
 message GroupInfoSetAnnouncementTips {
   GroupMemberFullInfo opUser = 1; //who do this
   GroupInfo group = 2;
