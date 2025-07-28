@@ -112,6 +112,7 @@ const (
 	UpdatePerAdminiOnlyForEditGroupBaseInfo   = 1533
 
 	RevokeGroupApplicationNotification = 1534
+	CreateGroupKeyVersionNotification  = 1535
 
 	//SignalingNotificationBegin = 1600
 	//SignalingNotification      = 1601
