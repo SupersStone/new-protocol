@@ -522,6 +522,21 @@ message BatchGetIncrementalGroupMemberResp {
   map<string, getIncrementalGroupMemberResp> respList = 1;
 }
 
+message KeyVersion {
+  string groupID = 1;
+  string version = 2;
+  bytes keyHash = 3;
+  string createTime = 4;
+}
+
+message GetGroupKeyVersionReq {
+  string groupID = 1;
+}
+
+message GetGroupKeyVersionResp {
+  repeated KeyVersion respList = 1;
+}
+
 service group {
   //通过用户编号获取与群的关系
   rpc GetGroupRelationByUser(GetGroupRelationByUserReq) returns (GetGroupRelationByUserResp);
@@ -610,6 +625,7 @@ service group {
   rpc getIncrementalJoinGroup(getIncrementalJoinGroupReq) returns (getIncrementalJoinGroupResp);
 
   rpc GetFullGroupMemberUserIDs(GetFullGroupMemberUserIDsReq) returns (GetFullGroupMemberUserIDsResp);
+  rpc GetGroupKeyVersion(GetGroupKeyVersionReq) returns (GetGroupKeyVersionResp);
 
   rpc GetFullJoinGroupIDs(GetFullJoinGroupIDsReq) returns (GetFullJoinGroupIDsResp);
 

@@ -77,6 +77,7 @@ const (
 	Group_BatchGetIncrementalGroupMember_FullMethodName   = "/openim.group.group/BatchGetIncrementalGroupMember"
 	Group_GetIncrementalJoinGroup_FullMethodName          = "/openim.group.group/getIncrementalJoinGroup"
 	Group_GetFullGroupMemberUserIDs_FullMethodName        = "/openim.group.group/GetFullGroupMemberUserIDs"
+	Group_GetGroupKeyVersion_FullMethodName               = "/openim.group.group/GetGroupKeyVersion"
 	Group_GetFullJoinGroupIDs_FullMethodName              = "/openim.group.group/GetFullJoinGroupIDs"
 )
 
@@ -160,6 +161,7 @@ type GroupClient interface {
 	BatchGetIncrementalGroupMember(ctx context.Context, in *BatchGetIncrementalGroupMemberReq, opts ...grpc.CallOption) (*BatchGetIncrementalGroupMemberResp, error)
 	GetIncrementalJoinGroup(ctx context.Context, in *GetIncrementalJoinGroupReq, opts ...grpc.CallOption) (*GetIncrementalJoinGroupResp, error)
 	GetFullGroupMemberUserIDs(ctx context.Context, in *GetFullGroupMemberUserIDsReq, opts ...grpc.CallOption) (*GetFullGroupMemberUserIDsResp, error)
+	GetGroupKeyVersion(ctx context.Context, in *GetGroupKeyVersionReq, opts ...grpc.CallOption) (*GetGroupKeyVersionResp, error)
 	GetFullJoinGroupIDs(ctx context.Context, in *GetFullJoinGroupIDsReq, opts ...grpc.CallOption) (*GetFullJoinGroupIDsResp, error)
 }
 
@@ -611,6 +613,16 @@ func (c *groupClient) GetFullGroupMemberUserIDs(ctx context.Context, in *GetFull
 	return out, nil
 }
 
+func (c *groupClient) GetGroupKeyVersion(ctx context.Context, in *GetGroupKeyVersionReq, opts ...grpc.CallOption) (*GetGroupKeyVersionResp, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetGroupKeyVersionResp)
+	err := c.cc.Invoke(ctx, Group_GetGroupKeyVersion_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *groupClient) GetFullJoinGroupIDs(ctx context.Context, in *GetFullJoinGroupIDsReq, opts ...grpc.CallOption) (*GetFullJoinGroupIDsResp, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetFullJoinGroupIDsResp)
@@ -701,6 +713,7 @@ type GroupServer interface {
 	BatchGetIncrementalGroupMember(context.Context, *BatchGetIncrementalGroupMemberReq) (*BatchGetIncrementalGroupMemberResp, error)
 	GetIncrementalJoinGroup(context.Context, *GetIncrementalJoinGroupReq) (*GetIncrementalJoinGroupResp, error)
 	GetFullGroupMemberUserIDs(context.Context, *GetFullGroupMemberUserIDsReq) (*GetFullGroupMemberUserIDsResp, error)
+	GetGroupKeyVersion(context.Context, *GetGroupKeyVersionReq) (*GetGroupKeyVersionResp, error)
 	GetFullJoinGroupIDs(context.Context, *GetFullJoinGroupIDsReq) (*GetFullJoinGroupIDsResp, error)
 	mustEmbedUnimplementedGroupServer()
 }
@@ -843,6 +856,9 @@ func (UnimplementedGroupServer) GetIncrementalJoinGroup(context.Context, *GetInc
 }
 func (UnimplementedGroupServer) GetFullGroupMemberUserIDs(context.Context, *GetFullGroupMemberUserIDsReq) (*GetFullGroupMemberUserIDsResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetFullGroupMemberUserIDs not implemented")
+}
+func (UnimplementedGroupServer) GetGroupKeyVersion(context.Context, *GetGroupKeyVersionReq) (*GetGroupKeyVersionResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGroupKeyVersion not implemented")
 }
 func (UnimplementedGroupServer) GetFullJoinGroupIDs(context.Context, *GetFullJoinGroupIDsReq) (*GetFullJoinGroupIDsResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetFullJoinGroupIDs not implemented")
@@ -1660,6 +1676,24 @@ func _Group_GetFullGroupMemberUserIDs_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Group_GetGroupKeyVersion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGroupKeyVersionReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GroupServer).GetGroupKeyVersion(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Group_GetGroupKeyVersion_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GroupServer).GetGroupKeyVersion(ctx, req.(*GetGroupKeyVersionReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Group_GetFullJoinGroupIDs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetFullJoinGroupIDsReq)
 	if err := dec(in); err != nil {
@@ -1860,6 +1894,10 @@ var Group_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetFullGroupMemberUserIDs",
 			Handler:    _Group_GetFullGroupMemberUserIDs_Handler,
+		},
+		{
+			MethodName: "GetGroupKeyVersion",
+			Handler:    _Group_GetGroupKeyVersion_Handler,
 		},
 		{
 			MethodName: "GetFullJoinGroupIDs",
