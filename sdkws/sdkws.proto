@@ -707,4 +707,7 @@ message UserPrivacyUpdate {
   string toUserID = 2;
   openim.protobuf.Int32Value allowSendMessages = 3;
   string conversationID = 4;
+  openim.protobuf.Int32Value allowViewLastOnlineTime = 5;
+  openim.protobuf.Int32Value allowVoiceCalls = 6;
+  openim.protobuf.Int32Value allowGroupInvitations = 7;
 }

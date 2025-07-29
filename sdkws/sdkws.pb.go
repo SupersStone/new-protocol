@@ -6344,13 +6344,16 @@ func (x *StreamMsgTips) GetEnd() bool {
 }
 
 type UserPrivacyUpdate struct {
-	state             protoimpl.MessageState `protogen:"open.v1"`
-	SendUserID        string                 `protobuf:"bytes,1,opt,name=sendUserID,proto3" json:"sendUserID,omitempty"`
-	ToUserID          string                 `protobuf:"bytes,2,opt,name=toUserID,proto3" json:"toUserID,omitempty"`
-	AllowSendMessages *wrapperspb.Int32Value `protobuf:"bytes,3,opt,name=allowSendMessages,proto3" json:"allowSendMessages,omitempty"`
-	ConversationID    string                 `protobuf:"bytes,4,opt,name=conversationID,proto3" json:"conversationID,omitempty"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	state                   protoimpl.MessageState `protogen:"open.v1"`
+	SendUserID              string                 `protobuf:"bytes,1,opt,name=sendUserID,proto3" json:"sendUserID,omitempty"`
+	ToUserID                string                 `protobuf:"bytes,2,opt,name=toUserID,proto3" json:"toUserID,omitempty"`
+	AllowSendMessages       *wrapperspb.Int32Value `protobuf:"bytes,3,opt,name=allowSendMessages,proto3" json:"allowSendMessages,omitempty"`
+	ConversationID          string                 `protobuf:"bytes,4,opt,name=conversationID,proto3" json:"conversationID,omitempty"`
+	AllowViewLastOnlineTime *wrapperspb.Int32Value `protobuf:"bytes,5,opt,name=allowViewLastOnlineTime,proto3" json:"allowViewLastOnlineTime,omitempty"`
+	AllowVoiceCalls         *wrapperspb.Int32Value `protobuf:"bytes,6,opt,name=allowVoiceCalls,proto3" json:"allowVoiceCalls,omitempty"`
+	AllowGroupInvitations   *wrapperspb.Int32Value `protobuf:"bytes,7,opt,name=allowGroupInvitations,proto3" json:"allowGroupInvitations,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
 }
 
 func (x *UserPrivacyUpdate) Reset() {
@@ -6409,6 +6412,27 @@ func (x *UserPrivacyUpdate) GetConversationID() string {
 		return x.ConversationID
 	}
 	return ""
+}
+
+func (x *UserPrivacyUpdate) GetAllowViewLastOnlineTime() *wrapperspb.Int32Value {
+	if x != nil {
+		return x.AllowViewLastOnlineTime
+	}
+	return nil
+}
+
+func (x *UserPrivacyUpdate) GetAllowVoiceCalls() *wrapperspb.Int32Value {
+	if x != nil {
+		return x.AllowVoiceCalls
+	}
+	return nil
+}
+
+func (x *UserPrivacyUpdate) GetAllowGroupInvitations() *wrapperspb.Int32Value {
+	if x != nil {
+		return x.AllowGroupInvitations
+	}
+	return nil
 }
 
 var File_sdkws_sdkws_proto protoreflect.FileDescriptor
@@ -7019,14 +7043,17 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"startIndex\x18\x03 \x01(\x03R\n" +
 	"startIndex\x12\x18\n" +
 	"\apackets\x18\x04 \x03(\tR\apackets\x12\x10\n" +
-	"\x03end\x18\x05 \x01(\bR\x03end\"\xc2\x01\n" +
+	"\x03end\x18\x05 \x01(\bR\x03end\"\xb3\x03\n" +
 	"\x11UserPrivacyUpdate\x12\x1e\n" +
 	"\n" +
 	"sendUserID\x18\x01 \x01(\tR\n" +
 	"sendUserID\x12\x1a\n" +
 	"\btoUserID\x18\x02 \x01(\tR\btoUserID\x12I\n" +
 	"\x11allowSendMessages\x18\x03 \x01(\v2\x1b.openim.protobuf.Int32ValueR\x11allowSendMessages\x12&\n" +
-	"\x0econversationID\x18\x04 \x01(\tR\x0econversationID*0\n" +
+	"\x0econversationID\x18\x04 \x01(\tR\x0econversationID\x12U\n" +
+	"\x17allowViewLastOnlineTime\x18\x05 \x01(\v2\x1b.openim.protobuf.Int32ValueR\x17allowViewLastOnlineTime\x12E\n" +
+	"\x0fallowVoiceCalls\x18\x06 \x01(\v2\x1b.openim.protobuf.Int32ValueR\x0fallowVoiceCalls\x12Q\n" +
+	"\x15allowGroupInvitations\x18\a \x01(\v2\x1b.openim.protobuf.Int32ValueR\x15allowGroupInvitations*0\n" +
 	"\tPullOrder\x12\x10\n" +
 	"\fPullOrderAsc\x10\x00\x12\x11\n" +
 	"\rPullOrderDesc\x10\x01B+Z)github.com/SupersStone/new-protocol/sdkwsb\x06proto3"
@@ -7237,15 +7264,18 @@ var file_sdkws_sdkws_proto_depIdxs = []int32{
 	45,  // 95: openim.sdkws.FriendsInfoUpdateTips.fromToUserID:type_name -> openim.sdkws.FromToUserID
 	77,  // 96: openim.sdkws.SubUserOnlineStatusTips.subscribers:type_name -> openim.sdkws.SubUserOnlineStatusElem
 	89,  // 97: openim.sdkws.UserPrivacyUpdate.allowSendMessages:type_name -> openim.protobuf.Int32Value
-	15,  // 98: openim.sdkws.PullMessageBySeqsResp.MsgsEntry.value:type_name -> openim.sdkws.PullMsgs
-	15,  // 99: openim.sdkws.PullMessageBySeqsResp.NotificationMsgsEntry.value:type_name -> openim.sdkws.PullMsgs
-	15,  // 100: openim.sdkws.PushMessages.MsgsEntry.value:type_name -> openim.sdkws.PullMsgs
-	15,  // 101: openim.sdkws.PushMessages.NotificationMsgsEntry.value:type_name -> openim.sdkws.PullMsgs
-	102, // [102:102] is the sub-list for method output_type
-	102, // [102:102] is the sub-list for method input_type
-	102, // [102:102] is the sub-list for extension type_name
-	102, // [102:102] is the sub-list for extension extendee
-	0,   // [0:102] is the sub-list for field type_name
+	89,  // 98: openim.sdkws.UserPrivacyUpdate.allowViewLastOnlineTime:type_name -> openim.protobuf.Int32Value
+	89,  // 99: openim.sdkws.UserPrivacyUpdate.allowVoiceCalls:type_name -> openim.protobuf.Int32Value
+	89,  // 100: openim.sdkws.UserPrivacyUpdate.allowGroupInvitations:type_name -> openim.protobuf.Int32Value
+	15,  // 101: openim.sdkws.PullMessageBySeqsResp.MsgsEntry.value:type_name -> openim.sdkws.PullMsgs
+	15,  // 102: openim.sdkws.PullMessageBySeqsResp.NotificationMsgsEntry.value:type_name -> openim.sdkws.PullMsgs
+	15,  // 103: openim.sdkws.PushMessages.MsgsEntry.value:type_name -> openim.sdkws.PullMsgs
+	15,  // 104: openim.sdkws.PushMessages.NotificationMsgsEntry.value:type_name -> openim.sdkws.PullMsgs
+	105, // [105:105] is the sub-list for method output_type
+	105, // [105:105] is the sub-list for method input_type
+	105, // [105:105] is the sub-list for extension type_name
+	105, // [105:105] is the sub-list for extension extendee
+	0,   // [0:105] is the sub-list for field type_name
 }
 
 func init() { file_sdkws_sdkws_proto_init() }
