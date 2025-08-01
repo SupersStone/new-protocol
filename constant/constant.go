@@ -362,6 +362,8 @@ const (
 const (
 	CloseGroupLinkEntryVerify = 0 // 群组链接审核 关闭
 	OpenGroupLinkEntryVerify  = 1 // 群组链接审核 开启
+	CloseGroupLinkStatus      = 0 // 群组链接状态 关闭
+	OpenGroupLinkStatus       = 1 // 群组链接状态 开启
 )
 
 const (
