@@ -441,6 +441,7 @@ type GroupMemberFullInfo struct {
 	Ex             string                 `protobuf:"bytes,10,opt,name=ex,proto3" json:"ex,omitempty"`
 	MuteEndTime    int64                  `protobuf:"varint,11,opt,name=muteEndTime,proto3" json:"muteEndTime,omitempty"`
 	InviterUserID  string                 `protobuf:"bytes,12,opt,name=inviterUserID,proto3" json:"inviterUserID,omitempty"`
+	PublicKey      string                 `protobuf:"bytes,13,opt,name=publicKey,proto3" json:"publicKey,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -559,6 +560,13 @@ func (x *GroupMemberFullInfo) GetInviterUserID() string {
 	return ""
 }
 
+func (x *GroupMemberFullInfo) GetPublicKey() string {
+	if x != nil {
+		return x.PublicKey
+	}
+	return ""
+}
+
 type PublicUserInfo struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserID        string                 `protobuf:"bytes,1,opt,name=userID,proto3" json:"userID,omitempty"`
@@ -661,6 +669,7 @@ type UserInfo struct {
 	AutoDeleteMsg           int32                  `protobuf:"varint,14,opt,name=autoDeleteMsg,proto3" json:"autoDeleteMsg,omitempty"`
 	AutoDeleteDuration      int32                  `protobuf:"varint,15,opt,name=autoDeleteDuration,proto3" json:"autoDeleteDuration,omitempty"`
 	ApplyAllConversation    int32                  `protobuf:"varint,16,opt,name=applyAllConversation,proto3" json:"applyAllConversation,omitempty"`
+	PublicKey               string                 `protobuf:"bytes,17,opt,name=publicKey,proto3" json:"publicKey,omitempty"`
 	unknownFields           protoimpl.UnknownFields
 	sizeCache               protoimpl.SizeCache
 }
@@ -805,6 +814,13 @@ func (x *UserInfo) GetApplyAllConversation() int32 {
 		return x.ApplyAllConversation
 	}
 	return 0
+}
+
+func (x *UserInfo) GetPublicKey() string {
+	if x != nil {
+		return x.PublicKey
+	}
+	return ""
 }
 
 type UserInfoWithEx struct {
@@ -6478,7 +6494,7 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"\x02ex\x18\x06 \x01(\v2\x1c.openim.protobuf.StringValueR\x02ex\x12G\n" +
 	"\x10needVerification\x18\a \x01(\v2\x1b.openim.protobuf.Int32ValueR\x10needVerification\x12C\n" +
 	"\x0elookMemberInfo\x18\b \x01(\v2\x1b.openim.protobuf.Int32ValueR\x0elookMemberInfo\x12I\n" +
-	"\x11applyMemberFriend\x18\t \x01(\v2\x1b.openim.protobuf.Int32ValueR\x11applyMemberFriend\"\xff\x02\n" +
+	"\x11applyMemberFriend\x18\t \x01(\v2\x1b.openim.protobuf.Int32ValueR\x11applyMemberFriend\"\x9d\x03\n" +
 	"\x13GroupMemberFullInfo\x12\x18\n" +
 	"\agroupID\x18\x01 \x01(\tR\agroupID\x12\x16\n" +
 	"\x06userID\x18\x02 \x01(\tR\x06userID\x12\x1c\n" +
@@ -6494,14 +6510,15 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"\x02ex\x18\n" +
 	" \x01(\tR\x02ex\x12 \n" +
 	"\vmuteEndTime\x18\v \x01(\x03R\vmuteEndTime\x12$\n" +
-	"\rinviterUserID\x18\f \x01(\tR\rinviterUserID\"\x9c\x01\n" +
+	"\rinviterUserID\x18\f \x01(\tR\rinviterUserID\x12\x1c\n" +
+	"\tpublicKey\x18\r \x01(\tR\tpublicKey\"\x9c\x01\n" +
 	"\x0ePublicUserInfo\x12\x16\n" +
 	"\x06userID\x18\x01 \x01(\tR\x06userID\x12\x1a\n" +
 	"\bnickname\x18\x02 \x01(\tR\bnickname\x12\x18\n" +
 	"\afaceURL\x18\x03 \x01(\tR\afaceURL\x12\x0e\n" +
 	"\x02ex\x18\x04 \x01(\tR\x02ex\x12\x18\n" +
 	"\asurName\x18\x05 \x01(\tR\asurName\x12\x12\n" +
-	"\x04name\x18\x06 \x01(\tR\x04name\"\xdc\x04\n" +
+	"\x04name\x18\x06 \x01(\tR\x04name\"\xfa\x04\n" +
 	"\bUserInfo\x12\x16\n" +
 	"\x06userID\x18\x01 \x01(\tR\x06userID\x12\x1a\n" +
 	"\bnickname\x18\x02 \x01(\tR\bnickname\x12\x18\n" +
@@ -6521,7 +6538,8 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"\x15allowGroupInvitations\x18\r \x01(\x05R\x15allowGroupInvitations\x12$\n" +
 	"\rautoDeleteMsg\x18\x0e \x01(\x05R\rautoDeleteMsg\x12.\n" +
 	"\x12autoDeleteDuration\x18\x0f \x01(\x05R\x12autoDeleteDuration\x122\n" +
-	"\x14applyAllConversation\x18\x10 \x01(\x05R\x14applyAllConversation\"\xae\x06\n" +
+	"\x14applyAllConversation\x18\x10 \x01(\x05R\x14applyAllConversation\x12\x1c\n" +
+	"\tpublicKey\x18\x11 \x01(\tR\tpublicKey\"\xae\x06\n" +
 	"\x0eUserInfoWithEx\x12\x16\n" +
 	"\x06userID\x18\x01 \x01(\tR\x06userID\x128\n" +
 	"\bnickname\x18\x02 \x01(\v2\x1c.openim.protobuf.StringValueR\bnickname\x126\n" +
