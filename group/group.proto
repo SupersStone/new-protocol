@@ -537,6 +537,12 @@ message GetGroupKeyVersionResp {
   repeated KeyVersion respList = 1;
 }
 
+message UpdateGroupRoomRecordReq {
+  string groupID = 1;
+}
+
+message UpdateGroupRoomRecordResp {}
+
 service group {
   //通过用户编号获取与群的关系
   rpc GetGroupRelationByUser(GetGroupRelationByUserReq) returns (GetGroupRelationByUserResp);
@@ -628,5 +634,7 @@ service group {
   rpc GetGroupKeyVersion(GetGroupKeyVersionReq) returns (GetGroupKeyVersionResp);
 
   rpc GetFullJoinGroupIDs(GetFullJoinGroupIDsReq) returns (GetFullJoinGroupIDsResp);
+  //更新群视频记录
+  rpc UpdateGroupRoomRecord(UpdateGroupRoomRecordReq) returns (UpdateGroupRoomRecordResp);
 
 }
