@@ -471,6 +471,14 @@ message GroupCancelMutedTips {
   string groupMemberVersionID = 5;
 }
 
+message GroupRoomRecordTips {
+  GroupInfo group = 1;
+  GroupMemberFullInfo opUser = 2;
+  int64 operationTime = 3;
+  uint64 groupMemberVersion = 4;
+  string groupMemberVersionID = 5;
+}
+
 message GroupMemberInfoSetTips {
   GroupInfo group = 1;
   GroupMemberFullInfo opUser = 2;

@@ -113,6 +113,7 @@ const (
 
 	RevokeGroupApplicationNotification = 1534
 	CreateGroupKeyVersionNotification  = 1535
+	GroupRoomRecordNotification        = 1536
 
 	//SignalingNotificationBegin = 1600
 	//SignalingNotification      = 1601
