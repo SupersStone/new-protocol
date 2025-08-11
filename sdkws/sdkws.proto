@@ -47,6 +47,8 @@ message GroupInfo {
   openim.protobuf.Int32Value groupLinkEntryVerify = 23;
   openim.protobuf.Int32Value editGroupBaseInfo = 24;
   int32 blockMemberCount = 25;
+  openim.protobuf.Int32Value roomMemberNumber = 26;
+  openim.protobuf.Int32Value roomStatus = 27;
 }
 
 message GroupInfoForSet {
