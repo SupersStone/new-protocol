@@ -5379,7 +5379,7 @@ type UpdateGroupRoomRecordReq struct {
 	RoomName      string                 `protobuf:"bytes,2,opt,name=roomName,proto3" json:"roomName,omitempty"`
 	MemberNumber  int32                  `protobuf:"varint,3,opt,name=memberNumber,proto3" json:"memberNumber,omitempty"`
 	Status        int32                  `protobuf:"varint,4,opt,name=status,proto3" json:"status,omitempty"`
-	CreateTime    int64                  `protobuf:"varint,5,opt,name=createTime,proto3" json:"createTime,omitempty"`
+	CreateTime    int32                  `protobuf:"varint,5,opt,name=createTime,proto3" json:"createTime,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -5442,7 +5442,7 @@ func (x *UpdateGroupRoomRecordReq) GetStatus() int32 {
 	return 0
 }
 
-func (x *UpdateGroupRoomRecordReq) GetCreateTime() int64 {
+func (x *UpdateGroupRoomRecordReq) GetCreateTime() int32 {
 	if x != nil {
 		return x.CreateTime
 	}
@@ -5865,7 +5865,7 @@ const file_group_group_proto_rawDesc = "" +
 	"\fmemberNumber\x18\x03 \x01(\x05R\fmemberNumber\x12\x16\n" +
 	"\x06status\x18\x04 \x01(\x05R\x06status\x12\x1e\n" +
 	"\n" +
-	"createTime\x18\x05 \x01(\x03R\n" +
+	"createTime\x18\x05 \x01(\x05R\n" +
 	"createTime\"\x1b\n" +
 	"\x19UpdateGroupRoomRecordResp2\x95$\n" +
 	"\x05group\x12k\n" +
