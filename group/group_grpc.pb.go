@@ -164,6 +164,7 @@ type GroupClient interface {
 	GetFullGroupMemberUserIDs(ctx context.Context, in *GetFullGroupMemberUserIDsReq, opts ...grpc.CallOption) (*GetFullGroupMemberUserIDsResp, error)
 	GetGroupKeyVersion(ctx context.Context, in *GetGroupKeyVersionReq, opts ...grpc.CallOption) (*GetGroupKeyVersionResp, error)
 	GetFullJoinGroupIDs(ctx context.Context, in *GetFullJoinGroupIDsReq, opts ...grpc.CallOption) (*GetFullJoinGroupIDsResp, error)
+	// 更新群视频记录
 	UpdateGroupRoomRecord(ctx context.Context, in *UpdateGroupRoomRecordReq, opts ...grpc.CallOption) (*UpdateGroupRoomRecordResp, error)
 }
 
@@ -727,6 +728,7 @@ type GroupServer interface {
 	GetFullGroupMemberUserIDs(context.Context, *GetFullGroupMemberUserIDsReq) (*GetFullGroupMemberUserIDsResp, error)
 	GetGroupKeyVersion(context.Context, *GetGroupKeyVersionReq) (*GetGroupKeyVersionResp, error)
 	GetFullJoinGroupIDs(context.Context, *GetFullJoinGroupIDsReq) (*GetFullJoinGroupIDsResp, error)
+	// 更新群视频记录
 	UpdateGroupRoomRecord(context.Context, *UpdateGroupRoomRecordReq) (*UpdateGroupRoomRecordResp, error)
 	mustEmbedUnimplementedGroupServer()
 }

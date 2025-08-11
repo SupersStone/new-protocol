@@ -5376,6 +5376,10 @@ func (x *GetGroupKeyVersionResp) GetRespList() []*KeyVersion {
 type UpdateGroupRoomRecordReq struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	GroupID       string                 `protobuf:"bytes,1,opt,name=groupID,proto3" json:"groupID,omitempty"`
+	RoomName      string                 `protobuf:"bytes,2,opt,name=roomName,proto3" json:"roomName,omitempty"`
+	MemberNumber  int32                  `protobuf:"varint,3,opt,name=memberNumber,proto3" json:"memberNumber,omitempty"`
+	Status        int32                  `protobuf:"varint,4,opt,name=status,proto3" json:"status,omitempty"`
+	CreateTime    int64                  `protobuf:"varint,5,opt,name=createTime,proto3" json:"createTime,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -5415,6 +5419,34 @@ func (x *UpdateGroupRoomRecordReq) GetGroupID() string {
 		return x.GroupID
 	}
 	return ""
+}
+
+func (x *UpdateGroupRoomRecordReq) GetRoomName() string {
+	if x != nil {
+		return x.RoomName
+	}
+	return ""
+}
+
+func (x *UpdateGroupRoomRecordReq) GetMemberNumber() int32 {
+	if x != nil {
+		return x.MemberNumber
+	}
+	return 0
+}
+
+func (x *UpdateGroupRoomRecordReq) GetStatus() int32 {
+	if x != nil {
+		return x.Status
+	}
+	return 0
+}
+
+func (x *UpdateGroupRoomRecordReq) GetCreateTime() int64 {
+	if x != nil {
+		return x.CreateTime
+	}
+	return 0
 }
 
 type UpdateGroupRoomRecordResp struct {
@@ -5826,9 +5858,15 @@ const file_group_group_proto_rawDesc = "" +
 	"\x15GetGroupKeyVersionReq\x12\x18\n" +
 	"\agroupID\x18\x01 \x01(\tR\agroupID\"N\n" +
 	"\x16GetGroupKeyVersionResp\x124\n" +
-	"\brespList\x18\x01 \x03(\v2\x18.openim.group.KeyVersionR\brespList\"4\n" +
+	"\brespList\x18\x01 \x03(\v2\x18.openim.group.KeyVersionR\brespList\"\xac\x01\n" +
 	"\x18UpdateGroupRoomRecordReq\x12\x18\n" +
-	"\agroupID\x18\x01 \x01(\tR\agroupID\"\x1b\n" +
+	"\agroupID\x18\x01 \x01(\tR\agroupID\x12\x1a\n" +
+	"\broomName\x18\x02 \x01(\tR\broomName\x12\"\n" +
+	"\fmemberNumber\x18\x03 \x01(\x05R\fmemberNumber\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\x05R\x06status\x12\x1e\n" +
+	"\n" +
+	"createTime\x18\x05 \x01(\x03R\n" +
+	"createTime\"\x1b\n" +
 	"\x19UpdateGroupRoomRecordResp2\x95$\n" +
 	"\x05group\x12k\n" +
 	"\x16GetGroupRelationByUser\x12'.openim.group.GetGroupRelationByUserReq\x1a(.openim.group.GetGroupRelationByUserResp\x12J\n" +
