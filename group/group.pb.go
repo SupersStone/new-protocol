@@ -5377,9 +5377,11 @@ type UpdateGroupRoomRecordReq struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	GroupID       string                 `protobuf:"bytes,1,opt,name=groupID,proto3" json:"groupID,omitempty"`
 	RoomName      string                 `protobuf:"bytes,2,opt,name=roomName,proto3" json:"roomName,omitempty"`
-	MemberNumber  int32                  `protobuf:"varint,3,opt,name=memberNumber,proto3" json:"memberNumber,omitempty"`
-	Status        int32                  `protobuf:"varint,4,opt,name=status,proto3" json:"status,omitempty"`
-	CreateTime    int32                  `protobuf:"varint,5,opt,name=createTime,proto3" json:"createTime,omitempty"`
+	Identity      string                 `protobuf:"bytes,3,opt,name=identity,proto3" json:"identity,omitempty"`
+	MemberNumber  int32                  `protobuf:"varint,4,opt,name=memberNumber,proto3" json:"memberNumber,omitempty"`
+	Status        int32                  `protobuf:"varint,5,opt,name=status,proto3" json:"status,omitempty"`
+	CreateTime    int32                  `protobuf:"varint,6,opt,name=createTime,proto3" json:"createTime,omitempty"`
+	Duration      int32                  `protobuf:"varint,7,opt,name=duration,proto3" json:"duration,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -5428,6 +5430,13 @@ func (x *UpdateGroupRoomRecordReq) GetRoomName() string {
 	return ""
 }
 
+func (x *UpdateGroupRoomRecordReq) GetIdentity() string {
+	if x != nil {
+		return x.Identity
+	}
+	return ""
+}
+
 func (x *UpdateGroupRoomRecordReq) GetMemberNumber() int32 {
 	if x != nil {
 		return x.MemberNumber
@@ -5445,6 +5454,13 @@ func (x *UpdateGroupRoomRecordReq) GetStatus() int32 {
 func (x *UpdateGroupRoomRecordReq) GetCreateTime() int32 {
 	if x != nil {
 		return x.CreateTime
+	}
+	return 0
+}
+
+func (x *UpdateGroupRoomRecordReq) GetDuration() int32 {
+	if x != nil {
+		return x.Duration
 	}
 	return 0
 }
@@ -5858,15 +5874,17 @@ const file_group_group_proto_rawDesc = "" +
 	"\x15GetGroupKeyVersionReq\x12\x18\n" +
 	"\agroupID\x18\x01 \x01(\tR\agroupID\"N\n" +
 	"\x16GetGroupKeyVersionResp\x124\n" +
-	"\brespList\x18\x01 \x03(\v2\x18.openim.group.KeyVersionR\brespList\"\xac\x01\n" +
+	"\brespList\x18\x01 \x03(\v2\x18.openim.group.KeyVersionR\brespList\"\xe4\x01\n" +
 	"\x18UpdateGroupRoomRecordReq\x12\x18\n" +
 	"\agroupID\x18\x01 \x01(\tR\agroupID\x12\x1a\n" +
-	"\broomName\x18\x02 \x01(\tR\broomName\x12\"\n" +
-	"\fmemberNumber\x18\x03 \x01(\x05R\fmemberNumber\x12\x16\n" +
-	"\x06status\x18\x04 \x01(\x05R\x06status\x12\x1e\n" +
+	"\broomName\x18\x02 \x01(\tR\broomName\x12\x1a\n" +
+	"\bidentity\x18\x03 \x01(\tR\bidentity\x12\"\n" +
+	"\fmemberNumber\x18\x04 \x01(\x05R\fmemberNumber\x12\x16\n" +
+	"\x06status\x18\x05 \x01(\x05R\x06status\x12\x1e\n" +
 	"\n" +
-	"createTime\x18\x05 \x01(\x05R\n" +
-	"createTime\"\x1b\n" +
+	"createTime\x18\x06 \x01(\x05R\n" +
+	"createTime\x12\x1a\n" +
+	"\bduration\x18\a \x01(\x05R\bduration\"\x1b\n" +
 	"\x19UpdateGroupRoomRecordResp2\x95$\n" +
 	"\x05group\x12k\n" +
 	"\x16GetGroupRelationByUser\x12'.openim.group.GetGroupRelationByUserReq\x1a(.openim.group.GetGroupRelationByUserResp\x12J\n" +
