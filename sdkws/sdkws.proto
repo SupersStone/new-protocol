@@ -47,10 +47,6 @@ message GroupInfo {
   openim.protobuf.Int32Value groupLinkEntryVerify = 23;
   openim.protobuf.Int32Value editGroupBaseInfo = 24;
   int32 blockMemberCount = 25;
-  string roomName = 26;
-  openim.protobuf.Int32Value roomMemberNumber = 27;
-  openim.protobuf.Int32Value roomStatus = 28;
-  openim.protobuf.Int32Value roomCreateTime = 29;
 }
 
 message GroupInfoForSet {
@@ -475,9 +471,20 @@ message GroupCancelMutedTips {
   string groupMemberVersionID = 5;
 }
 
+message GroupRoomFullInfo {
+  string groupID = 1;
+  string roomName = 2;
+  string userID = 3;
+  string nickname = 4;
+  int32 memberNumber = 5;
+  int32 status = 7;
+  int32 createTime = 8;
+  int32 duration = 9;
+}
+
 message GroupRoomRecordTips {
   GroupInfo group = 1;
-  GroupMemberFullInfo opUser = 2;
+  GroupRoomFullInfo roomInfo = 2;
   int64 operationTime = 3;
   uint64 groupMemberVersion = 4;
   string groupMemberVersionID = 5;

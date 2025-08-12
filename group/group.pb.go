@@ -5382,6 +5382,7 @@ type UpdateGroupRoomRecordReq struct {
 	Status        int32                  `protobuf:"varint,5,opt,name=status,proto3" json:"status,omitempty"`
 	CreateTime    int32                  `protobuf:"varint,6,opt,name=createTime,proto3" json:"createTime,omitempty"`
 	Duration      int32                  `protobuf:"varint,7,opt,name=duration,proto3" json:"duration,omitempty"`
+	Type          string                 `protobuf:"bytes,8,opt,name=type,proto3" json:"type,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -5463,6 +5464,13 @@ func (x *UpdateGroupRoomRecordReq) GetDuration() int32 {
 		return x.Duration
 	}
 	return 0
+}
+
+func (x *UpdateGroupRoomRecordReq) GetType() string {
+	if x != nil {
+		return x.Type
+	}
+	return ""
 }
 
 type UpdateGroupRoomRecordResp struct {
@@ -5874,7 +5882,7 @@ const file_group_group_proto_rawDesc = "" +
 	"\x15GetGroupKeyVersionReq\x12\x18\n" +
 	"\agroupID\x18\x01 \x01(\tR\agroupID\"N\n" +
 	"\x16GetGroupKeyVersionResp\x124\n" +
-	"\brespList\x18\x01 \x03(\v2\x18.openim.group.KeyVersionR\brespList\"\xe4\x01\n" +
+	"\brespList\x18\x01 \x03(\v2\x18.openim.group.KeyVersionR\brespList\"\xf8\x01\n" +
 	"\x18UpdateGroupRoomRecordReq\x12\x18\n" +
 	"\agroupID\x18\x01 \x01(\tR\agroupID\x12\x1a\n" +
 	"\broomName\x18\x02 \x01(\tR\broomName\x12\x1a\n" +
@@ -5884,7 +5892,8 @@ const file_group_group_proto_rawDesc = "" +
 	"\n" +
 	"createTime\x18\x06 \x01(\x05R\n" +
 	"createTime\x12\x1a\n" +
-	"\bduration\x18\a \x01(\x05R\bduration\"\x1b\n" +
+	"\bduration\x18\a \x01(\x05R\bduration\x12\x12\n" +
+	"\x04type\x18\b \x01(\tR\x04type\"\x1b\n" +
 	"\x19UpdateGroupRoomRecordResp2\x95$\n" +
 	"\x05group\x12k\n" +
 	"\x16GetGroupRelationByUser\x12'.openim.group.GetGroupRelationByUserReq\x1a(.openim.group.GetGroupRelationByUserResp\x12J\n" +
