@@ -113,7 +113,9 @@ const (
 
 	RevokeGroupApplicationNotification = 1534
 	CreateGroupKeyVersionNotification  = 1535
-	GroupRoomRecordNotification        = 1536
+	CreateGroupRoomNotification        = 1536
+	UpdateGroupRoomNotification        = 1537
+	CloseGroupRoomNotification         = 1538
 
 	//SignalingNotificationBegin = 1600
 	//SignalingNotification      = 1601
@@ -383,6 +385,12 @@ const (
 const (
 	GroupRPCRecvSize = 30
 	GroupRPCSendSize = 30
+)
+
+const (
+	CreateGroupRoom = "createRoom"
+	UpdateGroupRoom = "updateRoom"
+	CloseGroupRoom  = "closeRoom"
 )
 
 const FriendAcceptTip = "You have successfully become friends, so start chatting"
