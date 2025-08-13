@@ -4064,15 +4064,15 @@ func (x *GroupCancelMutedTips) GetGroupMemberVersionID() string {
 }
 
 type GroupRoomFullInfo struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	GroupID       string                 `protobuf:"bytes,1,opt,name=groupID,proto3" json:"groupID,omitempty"`
-	RoomName      string                 `protobuf:"bytes,2,opt,name=roomName,proto3" json:"roomName,omitempty"`
-	UserID        string                 `protobuf:"bytes,3,opt,name=userID,proto3" json:"userID,omitempty"`
-	Nickname      string                 `protobuf:"bytes,4,opt,name=nickname,proto3" json:"nickname,omitempty"`
-	MemberNumber  int32                  `protobuf:"varint,5,opt,name=memberNumber,proto3" json:"memberNumber,omitempty"`
-	Status        int32                  `protobuf:"varint,7,opt,name=status,proto3" json:"status,omitempty"`
-	CreateTime    int32                  `protobuf:"varint,8,opt,name=createTime,proto3" json:"createTime,omitempty"`
-	Duration      int32                  `protobuf:"varint,9,opt,name=duration,proto3" json:"duration,omitempty"`
+	state         protoimpl.MessageState  `protogen:"open.v1"`
+	GroupID       string                  `protobuf:"bytes,1,opt,name=groupID,proto3" json:"groupID,omitempty"`
+	RoomName      string                  `protobuf:"bytes,2,opt,name=roomName,proto3" json:"roomName,omitempty"`
+	UserID        string                  `protobuf:"bytes,3,opt,name=userID,proto3" json:"userID,omitempty"`
+	Nickname      *wrapperspb.StringValue `protobuf:"bytes,4,opt,name=nickname,proto3" json:"nickname,omitempty"`
+	MemberNumber  *wrapperspb.Int32Value  `protobuf:"bytes,5,opt,name=memberNumber,proto3" json:"memberNumber,omitempty"`
+	Status        *wrapperspb.Int32Value  `protobuf:"bytes,7,opt,name=status,proto3" json:"status,omitempty"`
+	CreateTime    *wrapperspb.Int32Value  `protobuf:"bytes,8,opt,name=createTime,proto3" json:"createTime,omitempty"`
+	Duration      *wrapperspb.Int32Value  `protobuf:"bytes,9,opt,name=duration,proto3" json:"duration,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -4128,39 +4128,39 @@ func (x *GroupRoomFullInfo) GetUserID() string {
 	return ""
 }
 
-func (x *GroupRoomFullInfo) GetNickname() string {
+func (x *GroupRoomFullInfo) GetNickname() *wrapperspb.StringValue {
 	if x != nil {
 		return x.Nickname
 	}
-	return ""
+	return nil
 }
 
-func (x *GroupRoomFullInfo) GetMemberNumber() int32 {
+func (x *GroupRoomFullInfo) GetMemberNumber() *wrapperspb.Int32Value {
 	if x != nil {
 		return x.MemberNumber
 	}
-	return 0
+	return nil
 }
 
-func (x *GroupRoomFullInfo) GetStatus() int32 {
+func (x *GroupRoomFullInfo) GetStatus() *wrapperspb.Int32Value {
 	if x != nil {
 		return x.Status
 	}
-	return 0
+	return nil
 }
 
-func (x *GroupRoomFullInfo) GetCreateTime() int32 {
+func (x *GroupRoomFullInfo) GetCreateTime() *wrapperspb.Int32Value {
 	if x != nil {
 		return x.CreateTime
 	}
-	return 0
+	return nil
 }
 
-func (x *GroupRoomFullInfo) GetDuration() int32 {
+func (x *GroupRoomFullInfo) GetDuration() *wrapperspb.Int32Value {
 	if x != nil {
 		return x.Duration
 	}
-	return 0
+	return nil
 }
 
 type GroupRoomRecordTips struct {
@@ -7053,18 +7053,18 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"\x06opUser\x18\x02 \x01(\v2!.openim.sdkws.GroupMemberFullInfoR\x06opUser\x12$\n" +
 	"\roperationTime\x18\x03 \x01(\x03R\roperationTime\x12.\n" +
 	"\x12groupMemberVersion\x18\x04 \x01(\x04R\x12groupMemberVersion\x122\n" +
-	"\x14groupMemberVersionID\x18\x05 \x01(\tR\x14groupMemberVersionID\"\xf5\x01\n" +
+	"\x14groupMemberVersionID\x18\x05 \x01(\tR\x14groupMemberVersionID\"\x87\x03\n" +
 	"\x11GroupRoomFullInfo\x12\x18\n" +
 	"\agroupID\x18\x01 \x01(\tR\agroupID\x12\x1a\n" +
 	"\broomName\x18\x02 \x01(\tR\broomName\x12\x16\n" +
-	"\x06userID\x18\x03 \x01(\tR\x06userID\x12\x1a\n" +
-	"\bnickname\x18\x04 \x01(\tR\bnickname\x12\"\n" +
-	"\fmemberNumber\x18\x05 \x01(\x05R\fmemberNumber\x12\x16\n" +
-	"\x06status\x18\a \x01(\x05R\x06status\x12\x1e\n" +
+	"\x06userID\x18\x03 \x01(\tR\x06userID\x128\n" +
+	"\bnickname\x18\x04 \x01(\v2\x1c.openim.protobuf.StringValueR\bnickname\x12?\n" +
+	"\fmemberNumber\x18\x05 \x01(\v2\x1b.openim.protobuf.Int32ValueR\fmemberNumber\x123\n" +
+	"\x06status\x18\a \x01(\v2\x1b.openim.protobuf.Int32ValueR\x06status\x12;\n" +
 	"\n" +
-	"createTime\x18\b \x01(\x05R\n" +
-	"createTime\x12\x1a\n" +
-	"\bduration\x18\t \x01(\x05R\bduration\"\x8b\x02\n" +
+	"createTime\x18\b \x01(\v2\x1b.openim.protobuf.Int32ValueR\n" +
+	"createTime\x127\n" +
+	"\bduration\x18\t \x01(\v2\x1b.openim.protobuf.Int32ValueR\bduration\"\x8b\x02\n" +
 	"\x13GroupRoomRecordTips\x12-\n" +
 	"\x05group\x18\x01 \x01(\v2\x17.openim.sdkws.GroupInfoR\x05group\x12;\n" +
 	"\broomInfo\x18\x02 \x01(\v2\x1f.openim.sdkws.GroupRoomFullInfoR\broomInfo\x12$\n" +
@@ -7461,36 +7461,41 @@ var file_sdkws_sdkws_proto_depIdxs = []int32{
 	3,   // 79: openim.sdkws.GroupMutedTips.opUser:type_name -> openim.sdkws.GroupMemberFullInfo
 	1,   // 80: openim.sdkws.GroupCancelMutedTips.group:type_name -> openim.sdkws.GroupInfo
 	3,   // 81: openim.sdkws.GroupCancelMutedTips.opUser:type_name -> openim.sdkws.GroupMemberFullInfo
-	1,   // 82: openim.sdkws.GroupRoomRecordTips.group:type_name -> openim.sdkws.GroupInfo
-	43,  // 83: openim.sdkws.GroupRoomRecordTips.roomInfo:type_name -> openim.sdkws.GroupRoomFullInfo
-	1,   // 84: openim.sdkws.GroupMemberInfoSetTips.group:type_name -> openim.sdkws.GroupInfo
-	3,   // 85: openim.sdkws.GroupMemberInfoSetTips.opUser:type_name -> openim.sdkws.GroupMemberFullInfo
-	3,   // 86: openim.sdkws.GroupMemberInfoSetTips.changedUser:type_name -> openim.sdkws.GroupMemberFullInfo
-	47,  // 87: openim.sdkws.FriendApplicationTips.fromToUserID:type_name -> openim.sdkws.FromToUserID
-	47,  // 88: openim.sdkws.FriendApplicationApprovedTips.fromToUserID:type_name -> openim.sdkws.FromToUserID
-	47,  // 89: openim.sdkws.FriendApplicationRejectedTips.fromToUserID:type_name -> openim.sdkws.FromToUserID
-	7,   // 90: openim.sdkws.FriendAddedTips.friend:type_name -> openim.sdkws.FriendInfo
-	4,   // 91: openim.sdkws.FriendAddedTips.opUser:type_name -> openim.sdkws.PublicUserInfo
-	47,  // 92: openim.sdkws.FriendDeletedTips.fromToUserID:type_name -> openim.sdkws.FromToUserID
-	47,  // 93: openim.sdkws.BlackAddedTips.fromToUserID:type_name -> openim.sdkws.FromToUserID
-	47,  // 94: openim.sdkws.BlackDeletedTips.fromToUserID:type_name -> openim.sdkws.FromToUserID
-	47,  // 95: openim.sdkws.FriendInfoChangedTips.fromToUserID:type_name -> openim.sdkws.FromToUserID
-	91,  // 96: openim.sdkws.ConversationSetPrivateTips.burnDuration:type_name -> openim.protobuf.Int32Value
-	47,  // 97: openim.sdkws.FriendsInfoUpdateTips.fromToUserID:type_name -> openim.sdkws.FromToUserID
-	79,  // 98: openim.sdkws.SubUserOnlineStatusTips.subscribers:type_name -> openim.sdkws.SubUserOnlineStatusElem
-	91,  // 99: openim.sdkws.UserPrivacyUpdate.allowSendMessages:type_name -> openim.protobuf.Int32Value
-	91,  // 100: openim.sdkws.UserPrivacyUpdate.allowViewLastOnlineTime:type_name -> openim.protobuf.Int32Value
-	91,  // 101: openim.sdkws.UserPrivacyUpdate.allowVoiceCalls:type_name -> openim.protobuf.Int32Value
-	91,  // 102: openim.sdkws.UserPrivacyUpdate.allowGroupInvitations:type_name -> openim.protobuf.Int32Value
-	15,  // 103: openim.sdkws.PullMessageBySeqsResp.MsgsEntry.value:type_name -> openim.sdkws.PullMsgs
-	15,  // 104: openim.sdkws.PullMessageBySeqsResp.NotificationMsgsEntry.value:type_name -> openim.sdkws.PullMsgs
-	15,  // 105: openim.sdkws.PushMessages.MsgsEntry.value:type_name -> openim.sdkws.PullMsgs
-	15,  // 106: openim.sdkws.PushMessages.NotificationMsgsEntry.value:type_name -> openim.sdkws.PullMsgs
-	107, // [107:107] is the sub-list for method output_type
-	107, // [107:107] is the sub-list for method input_type
-	107, // [107:107] is the sub-list for extension type_name
-	107, // [107:107] is the sub-list for extension extendee
-	0,   // [0:107] is the sub-list for field type_name
+	92,  // 82: openim.sdkws.GroupRoomFullInfo.nickname:type_name -> openim.protobuf.StringValue
+	91,  // 83: openim.sdkws.GroupRoomFullInfo.memberNumber:type_name -> openim.protobuf.Int32Value
+	91,  // 84: openim.sdkws.GroupRoomFullInfo.status:type_name -> openim.protobuf.Int32Value
+	91,  // 85: openim.sdkws.GroupRoomFullInfo.createTime:type_name -> openim.protobuf.Int32Value
+	91,  // 86: openim.sdkws.GroupRoomFullInfo.duration:type_name -> openim.protobuf.Int32Value
+	1,   // 87: openim.sdkws.GroupRoomRecordTips.group:type_name -> openim.sdkws.GroupInfo
+	43,  // 88: openim.sdkws.GroupRoomRecordTips.roomInfo:type_name -> openim.sdkws.GroupRoomFullInfo
+	1,   // 89: openim.sdkws.GroupMemberInfoSetTips.group:type_name -> openim.sdkws.GroupInfo
+	3,   // 90: openim.sdkws.GroupMemberInfoSetTips.opUser:type_name -> openim.sdkws.GroupMemberFullInfo
+	3,   // 91: openim.sdkws.GroupMemberInfoSetTips.changedUser:type_name -> openim.sdkws.GroupMemberFullInfo
+	47,  // 92: openim.sdkws.FriendApplicationTips.fromToUserID:type_name -> openim.sdkws.FromToUserID
+	47,  // 93: openim.sdkws.FriendApplicationApprovedTips.fromToUserID:type_name -> openim.sdkws.FromToUserID
+	47,  // 94: openim.sdkws.FriendApplicationRejectedTips.fromToUserID:type_name -> openim.sdkws.FromToUserID
+	7,   // 95: openim.sdkws.FriendAddedTips.friend:type_name -> openim.sdkws.FriendInfo
+	4,   // 96: openim.sdkws.FriendAddedTips.opUser:type_name -> openim.sdkws.PublicUserInfo
+	47,  // 97: openim.sdkws.FriendDeletedTips.fromToUserID:type_name -> openim.sdkws.FromToUserID
+	47,  // 98: openim.sdkws.BlackAddedTips.fromToUserID:type_name -> openim.sdkws.FromToUserID
+	47,  // 99: openim.sdkws.BlackDeletedTips.fromToUserID:type_name -> openim.sdkws.FromToUserID
+	47,  // 100: openim.sdkws.FriendInfoChangedTips.fromToUserID:type_name -> openim.sdkws.FromToUserID
+	91,  // 101: openim.sdkws.ConversationSetPrivateTips.burnDuration:type_name -> openim.protobuf.Int32Value
+	47,  // 102: openim.sdkws.FriendsInfoUpdateTips.fromToUserID:type_name -> openim.sdkws.FromToUserID
+	79,  // 103: openim.sdkws.SubUserOnlineStatusTips.subscribers:type_name -> openim.sdkws.SubUserOnlineStatusElem
+	91,  // 104: openim.sdkws.UserPrivacyUpdate.allowSendMessages:type_name -> openim.protobuf.Int32Value
+	91,  // 105: openim.sdkws.UserPrivacyUpdate.allowViewLastOnlineTime:type_name -> openim.protobuf.Int32Value
+	91,  // 106: openim.sdkws.UserPrivacyUpdate.allowVoiceCalls:type_name -> openim.protobuf.Int32Value
+	91,  // 107: openim.sdkws.UserPrivacyUpdate.allowGroupInvitations:type_name -> openim.protobuf.Int32Value
+	15,  // 108: openim.sdkws.PullMessageBySeqsResp.MsgsEntry.value:type_name -> openim.sdkws.PullMsgs
+	15,  // 109: openim.sdkws.PullMessageBySeqsResp.NotificationMsgsEntry.value:type_name -> openim.sdkws.PullMsgs
+	15,  // 110: openim.sdkws.PushMessages.MsgsEntry.value:type_name -> openim.sdkws.PullMsgs
+	15,  // 111: openim.sdkws.PushMessages.NotificationMsgsEntry.value:type_name -> openim.sdkws.PullMsgs
+	112, // [112:112] is the sub-list for method output_type
+	112, // [112:112] is the sub-list for method input_type
+	112, // [112:112] is the sub-list for extension type_name
+	112, // [112:112] is the sub-list for extension extendee
+	0,   // [0:112] is the sub-list for field type_name
 }
 
 func init() { file_sdkws_sdkws_proto_init() }

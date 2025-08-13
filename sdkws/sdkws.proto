@@ -475,11 +475,11 @@ message GroupRoomFullInfo {
   string groupID = 1;
   string roomName = 2;
   string userID = 3;
-  string nickname = 4;
-  int32 memberNumber = 5;
-  int32 status = 7;
-  int32 createTime = 8;
-  int32 duration = 9;
+  openim.protobuf.StringValue nickname = 4;
+  openim.protobuf.Int32Value memberNumber = 5;
+  openim.protobuf.Int32Value status = 7;
+  openim.protobuf.Int32Value createTime = 8;
+  openim.protobuf.Int32Value duration = 9;
 }
 
 message GroupRoomRecordTips {
