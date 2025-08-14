@@ -471,13 +471,25 @@ message GroupCancelMutedTips {
   string groupMemberVersionID = 5;
 }
 
+message GroupRoomFullInfo {
+  string groupID = 1;
+  string roomName = 2;
+  string userID = 3;
+  openim.protobuf.StringValue nickname = 4;
+  openim.protobuf.Int32Value memberNumber = 5;
+  openim.protobuf.Int32Value status = 7;
+  openim.protobuf.Int32Value createTime = 8;
+  openim.protobuf.Int32Value duration = 9;
+}
+
 message GroupRoomRecordTips {
   GroupInfo group = 1;
   GroupMemberFullInfo opUser = 2;
-  int64 operationTime = 3;
-  uint64 groupMemberVersion = 4;
-  string groupMemberVersionID = 5;
-  uint64 groupSortVersion = 6;
+  GroupRoomFullInfo roomInfo = 3;
+  int64 operationTime = 4;
+  uint64 groupMemberVersion = 5;
+  string groupMemberVersionID = 6;
+  uint64 groupSortVersion = 7;
 }
 
 message GroupMemberInfoSetTips {
