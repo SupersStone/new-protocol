@@ -186,6 +186,12 @@ message SetConversationsReq {
 
 message SetConversationsResp {}
 
+message SetConversationsForAllReq {
+  repeated SetConversationsReq conversations = 1;
+}
+
+message SetConversationsForAllResp {}
+
 message GetUserConversationIDsHashReq {
   string ownerUserID = 1;
 }
@@ -318,6 +324,7 @@ service conversation {
   rpc SetConversationMinSeq(SetConversationMinSeqReq) returns (SetConversationMinSeqResp);
   rpc GetConversationIDs(GetConversationIDsReq) returns (GetConversationIDsResp);
   rpc SetConversations(SetConversationsReq) returns (SetConversationsResp);
+  rpc SetConversationsForAll(SetConversationsForAllReq) returns (SetConversationsForAllResp);
   rpc GetUserConversationIDsHash(GetUserConversationIDsHashReq) returns (GetUserConversationIDsHashResp);
   rpc GetConversationsByConversationID(GetConversationsByConversationIDReq) returns (GetConversationsByConversationIDResp);
   rpc GetConversationOfflinePushUserIDs(GetConversationOfflinePushUserIDsReq) returns (GetConversationOfflinePushUserIDsResp);
