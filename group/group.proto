@@ -72,6 +72,12 @@ message SetGroupInfoExReq {
 }
 message SetGroupInfoExResp {}
 
+message SetGroupInfoExForAllReq {
+  repeated SetGroupInfoExReq SetGroupInfoEx = 1;
+}
+
+message SetGroupInfoExForAllResp {}
+
 message GetGroupApplicationListReq {
   openim.sdkws.RequestPagination pagination = 1;
   string fromUserID = 2; //owner or admin
@@ -568,6 +574,7 @@ service group {
   //设置群信息
   rpc setGroupInfo(SetGroupInfoReq) returns (SetGroupInfoResp);
   rpc setGroupInfoEx(SetGroupInfoExReq) returns (SetGroupInfoExResp);
+  rpc setGroupInfoExForAll(SetGroupInfoExForAllReq) returns (SetGroupInfoExForAllResp);
   //（以管理员或群主身份）获取群的加群申请
   rpc getGroupApplicationList(GetGroupApplicationListReq) returns (GetGroupApplicationListResp);
   //获取用户自己的主动加群申请

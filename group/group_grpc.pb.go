@@ -42,6 +42,7 @@ const (
 	Group_GetGroupsInfo_FullMethodName                    = "/openim.group.group/getGroupsInfo"
 	Group_SetGroupInfo_FullMethodName                     = "/openim.group.group/setGroupInfo"
 	Group_SetGroupInfoEx_FullMethodName                   = "/openim.group.group/setGroupInfoEx"
+	Group_SetGroupInfoExForAll_FullMethodName             = "/openim.group.group/setGroupInfoExForAll"
 	Group_GetGroupApplicationList_FullMethodName          = "/openim.group.group/getGroupApplicationList"
 	Group_GetUserReqApplicationList_FullMethodName        = "/openim.group.group/getUserReqApplicationList"
 	Group_GetGroupUsersReqApplicationList_FullMethodName  = "/openim.group.group/getGroupUsersReqApplicationList"
@@ -103,6 +104,7 @@ type GroupClient interface {
 	// 设置群信息
 	SetGroupInfo(ctx context.Context, in *SetGroupInfoReq, opts ...grpc.CallOption) (*SetGroupInfoResp, error)
 	SetGroupInfoEx(ctx context.Context, in *SetGroupInfoExReq, opts ...grpc.CallOption) (*SetGroupInfoExResp, error)
+	SetGroupInfoExForAll(ctx context.Context, in *SetGroupInfoExForAllReq, opts ...grpc.CallOption) (*SetGroupInfoExForAllResp, error)
 	// （以管理员或群主身份）获取群的加群申请
 	GetGroupApplicationList(ctx context.Context, in *GetGroupApplicationListReq, opts ...grpc.CallOption) (*GetGroupApplicationListResp, error)
 	// 获取用户自己的主动加群申请
@@ -260,6 +262,16 @@ func (c *groupClient) SetGroupInfoEx(ctx context.Context, in *SetGroupInfoExReq,
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(SetGroupInfoExResp)
 	err := c.cc.Invoke(ctx, Group_SetGroupInfoEx_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *groupClient) SetGroupInfoExForAll(ctx context.Context, in *SetGroupInfoExForAllReq, opts ...grpc.CallOption) (*SetGroupInfoExForAllResp, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetGroupInfoExForAllResp)
+	err := c.cc.Invoke(ctx, Group_SetGroupInfoExForAll_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -667,6 +679,7 @@ type GroupServer interface {
 	// 设置群信息
 	SetGroupInfo(context.Context, *SetGroupInfoReq) (*SetGroupInfoResp, error)
 	SetGroupInfoEx(context.Context, *SetGroupInfoExReq) (*SetGroupInfoExResp, error)
+	SetGroupInfoExForAll(context.Context, *SetGroupInfoExForAllReq) (*SetGroupInfoExForAllResp, error)
 	// （以管理员或群主身份）获取群的加群申请
 	GetGroupApplicationList(context.Context, *GetGroupApplicationListReq) (*GetGroupApplicationListResp, error)
 	// 获取用户自己的主动加群申请
@@ -766,6 +779,9 @@ func (UnimplementedGroupServer) SetGroupInfo(context.Context, *SetGroupInfoReq) 
 }
 func (UnimplementedGroupServer) SetGroupInfoEx(context.Context, *SetGroupInfoExReq) (*SetGroupInfoExResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetGroupInfoEx not implemented")
+}
+func (UnimplementedGroupServer) SetGroupInfoExForAll(context.Context, *SetGroupInfoExForAllReq) (*SetGroupInfoExForAllResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetGroupInfoExForAll not implemented")
 }
 func (UnimplementedGroupServer) GetGroupApplicationList(context.Context, *GetGroupApplicationListReq) (*GetGroupApplicationListResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGroupApplicationList not implemented")
@@ -1060,6 +1076,24 @@ func _Group_SetGroupInfoEx_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GroupServer).SetGroupInfoEx(ctx, req.(*SetGroupInfoExReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Group_SetGroupInfoExForAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetGroupInfoExForAllReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GroupServer).SetGroupInfoExForAll(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Group_SetGroupInfoExForAll_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GroupServer).SetGroupInfoExForAll(ctx, req.(*SetGroupInfoExForAllReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1790,6 +1824,10 @@ var Group_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "setGroupInfoEx",
 			Handler:    _Group_SetGroupInfoEx_Handler,
+		},
+		{
+			MethodName: "setGroupInfoExForAll",
+			Handler:    _Group_SetGroupInfoExForAll_Handler,
 		},
 		{
 			MethodName: "getGroupApplicationList",
