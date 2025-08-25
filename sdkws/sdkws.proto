@@ -75,6 +75,8 @@ message GroupMemberFullInfo {
   int64 muteEndTime = 11;
   string inviterUserID = 12;
   string publicKey = 13;
+  string surName = 14;
+  string name = 15;
 }
 
 message PublicUserInfo {
