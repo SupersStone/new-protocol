@@ -739,4 +739,5 @@ message UserPrivacyUpdate {
   openim.protobuf.Int32Value allowGroupInvitations = 7;
   string surName = 8;
   string name = 9;
+  string faceUrl = 10;
 }

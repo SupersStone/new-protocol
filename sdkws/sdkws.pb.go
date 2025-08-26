@@ -6594,6 +6594,7 @@ type UserPrivacyUpdate struct {
 	AllowGroupInvitations   *wrapperspb.Int32Value `protobuf:"bytes,7,opt,name=allowGroupInvitations,proto3" json:"allowGroupInvitations,omitempty"`
 	SurName                 string                 `protobuf:"bytes,8,opt,name=surName,proto3" json:"surName,omitempty"`
 	Name                    string                 `protobuf:"bytes,9,opt,name=name,proto3" json:"name,omitempty"`
+	FaceUrl                 string                 `protobuf:"bytes,10,opt,name=faceUrl,proto3" json:"faceUrl,omitempty"`
 	unknownFields           protoimpl.UnknownFields
 	sizeCache               protoimpl.SizeCache
 }
@@ -6687,6 +6688,13 @@ func (x *UserPrivacyUpdate) GetSurName() string {
 func (x *UserPrivacyUpdate) GetName() string {
 	if x != nil {
 		return x.Name
+	}
+	return ""
+}
+
+func (x *UserPrivacyUpdate) GetFaceUrl() string {
+	if x != nil {
+		return x.FaceUrl
 	}
 	return ""
 }
@@ -7324,7 +7332,7 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"startIndex\x18\x03 \x01(\x03R\n" +
 	"startIndex\x12\x18\n" +
 	"\apackets\x18\x04 \x03(\tR\apackets\x12\x10\n" +
-	"\x03end\x18\x05 \x01(\bR\x03end\"\xe1\x03\n" +
+	"\x03end\x18\x05 \x01(\bR\x03end\"\xfb\x03\n" +
 	"\x11UserPrivacyUpdate\x12\x1e\n" +
 	"\n" +
 	"sendUserID\x18\x01 \x01(\tR\n" +
@@ -7336,7 +7344,9 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"\x0fallowVoiceCalls\x18\x06 \x01(\v2\x1b.openim.protobuf.Int32ValueR\x0fallowVoiceCalls\x12Q\n" +
 	"\x15allowGroupInvitations\x18\a \x01(\v2\x1b.openim.protobuf.Int32ValueR\x15allowGroupInvitations\x12\x18\n" +
 	"\asurName\x18\b \x01(\tR\asurName\x12\x12\n" +
-	"\x04name\x18\t \x01(\tR\x04name*0\n" +
+	"\x04name\x18\t \x01(\tR\x04name\x12\x18\n" +
+	"\afaceUrl\x18\n" +
+	" \x01(\tR\afaceUrl*0\n" +
 	"\tPullOrder\x12\x10\n" +
 	"\fPullOrderAsc\x10\x00\x12\x11\n" +
 	"\rPullOrderDesc\x10\x01B+Z)github.com/SupersStone/new-protocol/sdkwsb\x06proto3"
