@@ -121,6 +121,8 @@ message UserInfoWithEx {
   openim.protobuf.Int32Value autoDeleteMsg = 10;
   openim.protobuf.Int32Value autoDeleteDuration = 11;
   openim.protobuf.Int32Value applyAllConversation = 12;
+  string surName = 13;
+  string name = 14;
 }
 
 message FriendInfo {
@@ -735,4 +737,6 @@ message UserPrivacyUpdate {
   openim.protobuf.Int32Value allowViewLastOnlineTime = 5;
   openim.protobuf.Int32Value allowVoiceCalls = 6;
   openim.protobuf.Int32Value allowGroupInvitations = 7;
+  string surName = 8;
+  string name = 9;
 }

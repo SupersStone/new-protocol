@@ -853,6 +853,8 @@ type UserInfoWithEx struct {
 	AutoDeleteMsg           *wrapperspb.Int32Value  `protobuf:"bytes,10,opt,name=autoDeleteMsg,proto3" json:"autoDeleteMsg,omitempty"`
 	AutoDeleteDuration      *wrapperspb.Int32Value  `protobuf:"bytes,11,opt,name=autoDeleteDuration,proto3" json:"autoDeleteDuration,omitempty"`
 	ApplyAllConversation    *wrapperspb.Int32Value  `protobuf:"bytes,12,opt,name=applyAllConversation,proto3" json:"applyAllConversation,omitempty"`
+	SurName                 string                  `protobuf:"bytes,13,opt,name=surName,proto3" json:"surName,omitempty"`
+	Name                    string                  `protobuf:"bytes,14,opt,name=name,proto3" json:"name,omitempty"`
 	unknownFields           protoimpl.UnknownFields
 	sizeCache               protoimpl.SizeCache
 }
@@ -969,6 +971,20 @@ func (x *UserInfoWithEx) GetApplyAllConversation() *wrapperspb.Int32Value {
 		return x.ApplyAllConversation
 	}
 	return nil
+}
+
+func (x *UserInfoWithEx) GetSurName() string {
+	if x != nil {
+		return x.SurName
+	}
+	return ""
+}
+
+func (x *UserInfoWithEx) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
 }
 
 type FriendInfo struct {
@@ -6576,6 +6592,8 @@ type UserPrivacyUpdate struct {
 	AllowViewLastOnlineTime *wrapperspb.Int32Value `protobuf:"bytes,5,opt,name=allowViewLastOnlineTime,proto3" json:"allowViewLastOnlineTime,omitempty"`
 	AllowVoiceCalls         *wrapperspb.Int32Value `protobuf:"bytes,6,opt,name=allowVoiceCalls,proto3" json:"allowVoiceCalls,omitempty"`
 	AllowGroupInvitations   *wrapperspb.Int32Value `protobuf:"bytes,7,opt,name=allowGroupInvitations,proto3" json:"allowGroupInvitations,omitempty"`
+	SurName                 string                 `protobuf:"bytes,8,opt,name=surName,proto3" json:"surName,omitempty"`
+	Name                    string                 `protobuf:"bytes,9,opt,name=name,proto3" json:"name,omitempty"`
 	unknownFields           protoimpl.UnknownFields
 	sizeCache               protoimpl.SizeCache
 }
@@ -6657,6 +6675,20 @@ func (x *UserPrivacyUpdate) GetAllowGroupInvitations() *wrapperspb.Int32Value {
 		return x.AllowGroupInvitations
 	}
 	return nil
+}
+
+func (x *UserPrivacyUpdate) GetSurName() string {
+	if x != nil {
+		return x.SurName
+	}
+	return ""
+}
+
+func (x *UserPrivacyUpdate) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
 }
 
 var File_sdkws_sdkws_proto protoreflect.FileDescriptor
@@ -6749,7 +6781,7 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"\rautoDeleteMsg\x18\x0e \x01(\x05R\rautoDeleteMsg\x12.\n" +
 	"\x12autoDeleteDuration\x18\x0f \x01(\x05R\x12autoDeleteDuration\x122\n" +
 	"\x14applyAllConversation\x18\x10 \x01(\x05R\x14applyAllConversation\x12\x1c\n" +
-	"\tpublicKey\x18\x11 \x01(\tR\tpublicKey\"\xae\x06\n" +
+	"\tpublicKey\x18\x11 \x01(\tR\tpublicKey\"\xdc\x06\n" +
 	"\x0eUserInfoWithEx\x12\x16\n" +
 	"\x06userID\x18\x01 \x01(\tR\x06userID\x128\n" +
 	"\bnickname\x18\x02 \x01(\v2\x1c.openim.protobuf.StringValueR\bnickname\x126\n" +
@@ -6763,7 +6795,9 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"\rautoDeleteMsg\x18\n" +
 	" \x01(\v2\x1b.openim.protobuf.Int32ValueR\rautoDeleteMsg\x12K\n" +
 	"\x12autoDeleteDuration\x18\v \x01(\v2\x1b.openim.protobuf.Int32ValueR\x12autoDeleteDuration\x12O\n" +
-	"\x14applyAllConversation\x18\f \x01(\v2\x1b.openim.protobuf.Int32ValueR\x14applyAllConversation\"\x90\x02\n" +
+	"\x14applyAllConversation\x18\f \x01(\v2\x1b.openim.protobuf.Int32ValueR\x14applyAllConversation\x12\x18\n" +
+	"\asurName\x18\r \x01(\tR\asurName\x12\x12\n" +
+	"\x04name\x18\x0e \x01(\tR\x04name\"\x90\x02\n" +
 	"\n" +
 	"FriendInfo\x12 \n" +
 	"\vownerUserID\x18\x01 \x01(\tR\vownerUserID\x12\x16\n" +
@@ -7290,7 +7324,7 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"startIndex\x18\x03 \x01(\x03R\n" +
 	"startIndex\x12\x18\n" +
 	"\apackets\x18\x04 \x03(\tR\apackets\x12\x10\n" +
-	"\x03end\x18\x05 \x01(\bR\x03end\"\xb3\x03\n" +
+	"\x03end\x18\x05 \x01(\bR\x03end\"\xe1\x03\n" +
 	"\x11UserPrivacyUpdate\x12\x1e\n" +
 	"\n" +
 	"sendUserID\x18\x01 \x01(\tR\n" +
@@ -7300,7 +7334,9 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"\x0econversationID\x18\x04 \x01(\tR\x0econversationID\x12U\n" +
 	"\x17allowViewLastOnlineTime\x18\x05 \x01(\v2\x1b.openim.protobuf.Int32ValueR\x17allowViewLastOnlineTime\x12E\n" +
 	"\x0fallowVoiceCalls\x18\x06 \x01(\v2\x1b.openim.protobuf.Int32ValueR\x0fallowVoiceCalls\x12Q\n" +
-	"\x15allowGroupInvitations\x18\a \x01(\v2\x1b.openim.protobuf.Int32ValueR\x15allowGroupInvitations*0\n" +
+	"\x15allowGroupInvitations\x18\a \x01(\v2\x1b.openim.protobuf.Int32ValueR\x15allowGroupInvitations\x12\x18\n" +
+	"\asurName\x18\b \x01(\tR\asurName\x12\x12\n" +
+	"\x04name\x18\t \x01(\tR\x04name*0\n" +
 	"\tPullOrder\x12\x10\n" +
 	"\fPullOrderAsc\x10\x00\x12\x11\n" +
 	"\rPullOrderDesc\x10\x01B+Z)github.com/SupersStone/new-protocol/sdkwsb\x06proto3"
