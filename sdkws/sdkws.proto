@@ -77,6 +77,7 @@ message GroupMemberFullInfo {
   string publicKey = 13;
   string surName = 14;
   string name = 15;
+  string account = 16;
 }
 
 message PublicUserInfo {

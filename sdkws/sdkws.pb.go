@@ -444,6 +444,7 @@ type GroupMemberFullInfo struct {
 	PublicKey      string                 `protobuf:"bytes,13,opt,name=publicKey,proto3" json:"publicKey,omitempty"`
 	SurName        string                 `protobuf:"bytes,14,opt,name=surName,proto3" json:"surName,omitempty"`
 	Name           string                 `protobuf:"bytes,15,opt,name=name,proto3" json:"name,omitempty"`
+	Account        string                 `protobuf:"bytes,16,opt,name=account,proto3" json:"account,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -579,6 +580,13 @@ func (x *GroupMemberFullInfo) GetSurName() string {
 func (x *GroupMemberFullInfo) GetName() string {
 	if x != nil {
 		return x.Name
+	}
+	return ""
+}
+
+func (x *GroupMemberFullInfo) GetAccount() string {
+	if x != nil {
+		return x.Account
 	}
 	return ""
 }
@@ -6750,7 +6758,7 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"\x02ex\x18\x06 \x01(\v2\x1c.openim.protobuf.StringValueR\x02ex\x12G\n" +
 	"\x10needVerification\x18\a \x01(\v2\x1b.openim.protobuf.Int32ValueR\x10needVerification\x12C\n" +
 	"\x0elookMemberInfo\x18\b \x01(\v2\x1b.openim.protobuf.Int32ValueR\x0elookMemberInfo\x12I\n" +
-	"\x11applyMemberFriend\x18\t \x01(\v2\x1b.openim.protobuf.Int32ValueR\x11applyMemberFriend\"\xcb\x03\n" +
+	"\x11applyMemberFriend\x18\t \x01(\v2\x1b.openim.protobuf.Int32ValueR\x11applyMemberFriend\"\xe5\x03\n" +
 	"\x13GroupMemberFullInfo\x12\x18\n" +
 	"\agroupID\x18\x01 \x01(\tR\agroupID\x12\x16\n" +
 	"\x06userID\x18\x02 \x01(\tR\x06userID\x12\x1c\n" +
@@ -6769,7 +6777,8 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"\rinviterUserID\x18\f \x01(\tR\rinviterUserID\x12\x1c\n" +
 	"\tpublicKey\x18\r \x01(\tR\tpublicKey\x12\x18\n" +
 	"\asurName\x18\x0e \x01(\tR\asurName\x12\x12\n" +
-	"\x04name\x18\x0f \x01(\tR\x04name\"\x9c\x01\n" +
+	"\x04name\x18\x0f \x01(\tR\x04name\x12\x18\n" +
+	"\aaccount\x18\x10 \x01(\tR\aaccount\"\x9c\x01\n" +
 	"\x0ePublicUserInfo\x12\x16\n" +
 	"\x06userID\x18\x01 \x01(\tR\x06userID\x12\x1a\n" +
 	"\bnickname\x18\x02 \x01(\tR\bnickname\x12\x18\n" +
