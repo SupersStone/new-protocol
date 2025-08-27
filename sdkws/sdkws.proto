@@ -106,6 +106,7 @@ message UserInfo {
   int32 autoDeleteDuration = 15;
   int32 applyAllConversation = 16;
   string publicKey = 17;
+  string account = 18;
 }
 
 message UserInfoWithEx {
