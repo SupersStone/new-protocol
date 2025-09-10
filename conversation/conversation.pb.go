@@ -227,7 +227,7 @@ type ConversationReq struct {
 	MsgDestructTime  *wrapperspb.Int64Value  `protobuf:"bytes,14,opt,name=msgDestructTime,proto3" json:"msgDestructTime,omitempty"`
 	IsMsgDestruct    *wrapperspb.BoolValue   `protobuf:"bytes,15,opt,name=isMsgDestruct,proto3" json:"isMsgDestruct,omitempty"`
 	SilentSeconds    *wrapperspb.Int32Value  `protobuf:"bytes,16,opt,name=silentSeconds,proto3" json:"silentSeconds,omitempty"`
-	IsReversed       *wrapperspb.Int32Value  `protobuf:"bytes,17,opt,name=isReversed,proto3" json:"isReversed,omitempty"`
+	IsReversed       *wrapperspb.BoolValue   `protobuf:"bytes,17,opt,name=isReversed,proto3" json:"isReversed,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -374,7 +374,7 @@ func (x *ConversationReq) GetSilentSeconds() *wrapperspb.Int32Value {
 	return nil
 }
 
-func (x *ConversationReq) GetIsReversed() *wrapperspb.Int32Value {
+func (x *ConversationReq) GetIsReversed() *wrapperspb.BoolValue {
 	if x != nil {
 		return x.IsReversed
 	}
@@ -3126,7 +3126,7 @@ const file_conversation_conversation_proto_rawDesc = "" +
 	"\x06maxSeq\x18\x0e \x01(\x03R\x06maxSeq\x12(\n" +
 	"\x0fmsgDestructTime\x18\x0f \x01(\x03R\x0fmsgDestructTime\x124\n" +
 	"\x15latestMsgDestructTime\x18\x10 \x01(\x03R\x15latestMsgDestructTime\x12$\n" +
-	"\risMsgDestruct\x18\x11 \x01(\bR\risMsgDestruct\"\xb1\a\n" +
+	"\risMsgDestruct\x18\x11 \x01(\bR\risMsgDestruct\"\xb0\a\n" +
 	"\x0fConversationReq\x12&\n" +
 	"\x0econversationID\x18\x01 \x01(\tR\x0econversationID\x12*\n" +
 	"\x10conversationType\x18\x02 \x01(\x05R\x10conversationType\x12\x16\n" +
@@ -3146,9 +3146,9 @@ const file_conversation_conversation_proto_rawDesc = "" +
 	"\vgroupAtType\x18\r \x01(\v2\x1b.openim.protobuf.Int32ValueR\vgroupAtType\x12E\n" +
 	"\x0fmsgDestructTime\x18\x0e \x01(\v2\x1b.openim.protobuf.Int64ValueR\x0fmsgDestructTime\x12@\n" +
 	"\risMsgDestruct\x18\x0f \x01(\v2\x1a.openim.protobuf.BoolValueR\risMsgDestruct\x12A\n" +
-	"\rsilentSeconds\x18\x10 \x01(\v2\x1b.openim.protobuf.Int32ValueR\rsilentSeconds\x12;\n" +
+	"\rsilentSeconds\x18\x10 \x01(\v2\x1b.openim.protobuf.Int32ValueR\rsilentSeconds\x12:\n" +
 	"\n" +
-	"isReversed\x18\x11 \x01(\v2\x1b.openim.protobuf.Int32ValueR\n" +
+	"isReversed\x18\x11 \x01(\v2\x1a.openim.protobuf.BoolValueR\n" +
 	"isReversed\"[\n" +
 	"\x12SetConversationReq\x12E\n" +
 	"\fconversation\x18\x01 \x01(\v2!.openim.conversation.ConversationR\fconversation\"\x15\n" +
@@ -3434,7 +3434,7 @@ var file_conversation_conversation_proto_depIdxs = []int32{
 	57, // 9: openim.conversation.ConversationReq.msgDestructTime:type_name -> openim.protobuf.Int64Value
 	55, // 10: openim.conversation.ConversationReq.isMsgDestruct:type_name -> openim.protobuf.BoolValue
 	54, // 11: openim.conversation.ConversationReq.silentSeconds:type_name -> openim.protobuf.Int32Value
-	54, // 12: openim.conversation.ConversationReq.isReversed:type_name -> openim.protobuf.Int32Value
+	55, // 12: openim.conversation.ConversationReq.isReversed:type_name -> openim.protobuf.BoolValue
 	0,  // 13: openim.conversation.SetConversationReq.conversation:type_name -> openim.conversation.Conversation
 	0,  // 14: openim.conversation.GetConversationResp.conversation:type_name -> openim.conversation.Conversation
 	58, // 15: openim.conversation.GetSortedConversationListReq.pagination:type_name -> openim.sdkws.RequestPagination
