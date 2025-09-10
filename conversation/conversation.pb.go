@@ -227,7 +227,7 @@ type ConversationReq struct {
 	MsgDestructTime  *wrapperspb.Int64Value  `protobuf:"bytes,14,opt,name=msgDestructTime,proto3" json:"msgDestructTime,omitempty"`
 	IsMsgDestruct    *wrapperspb.BoolValue   `protobuf:"bytes,15,opt,name=isMsgDestruct,proto3" json:"isMsgDestruct,omitempty"`
 	SilentSeconds    *wrapperspb.Int32Value  `protobuf:"bytes,16,opt,name=silentSeconds,proto3" json:"silentSeconds,omitempty"`
-	IsReversed       *wrapperspb.Int32Value  `protobuf:"bytes,17,opt,name=IsReversed,proto3" json:"IsReversed,omitempty"`
+	IsReversed       *wrapperspb.Int32Value  `protobuf:"bytes,17,opt,name=isReversed,proto3" json:"isReversed,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -3148,8 +3148,8 @@ const file_conversation_conversation_proto_rawDesc = "" +
 	"\risMsgDestruct\x18\x0f \x01(\v2\x1a.openim.protobuf.BoolValueR\risMsgDestruct\x12A\n" +
 	"\rsilentSeconds\x18\x10 \x01(\v2\x1b.openim.protobuf.Int32ValueR\rsilentSeconds\x12;\n" +
 	"\n" +
-	"IsReversed\x18\x11 \x01(\v2\x1b.openim.protobuf.Int32ValueR\n" +
-	"IsReversed\"[\n" +
+	"isReversed\x18\x11 \x01(\v2\x1b.openim.protobuf.Int32ValueR\n" +
+	"isReversed\"[\n" +
 	"\x12SetConversationReq\x12E\n" +
 	"\fconversation\x18\x01 \x01(\v2!.openim.conversation.ConversationR\fconversation\"\x15\n" +
 	"\x13SetConversationResp\"^\n" +
@@ -3434,7 +3434,7 @@ var file_conversation_conversation_proto_depIdxs = []int32{
 	57, // 9: openim.conversation.ConversationReq.msgDestructTime:type_name -> openim.protobuf.Int64Value
 	55, // 10: openim.conversation.ConversationReq.isMsgDestruct:type_name -> openim.protobuf.BoolValue
 	54, // 11: openim.conversation.ConversationReq.silentSeconds:type_name -> openim.protobuf.Int32Value
-	54, // 12: openim.conversation.ConversationReq.IsReversed:type_name -> openim.protobuf.Int32Value
+	54, // 12: openim.conversation.ConversationReq.isReversed:type_name -> openim.protobuf.Int32Value
 	0,  // 13: openim.conversation.SetConversationReq.conversation:type_name -> openim.conversation.Conversation
 	0,  // 14: openim.conversation.GetConversationResp.conversation:type_name -> openim.conversation.Conversation
 	58, // 15: openim.conversation.GetSortedConversationListReq.pagination:type_name -> openim.sdkws.RequestPagination

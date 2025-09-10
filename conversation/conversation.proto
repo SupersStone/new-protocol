@@ -57,7 +57,7 @@ message ConversationReq {
   openim.protobuf.Int64Value msgDestructTime = 14;
   openim.protobuf.BoolValue isMsgDestruct = 15;
   openim.protobuf.Int32Value silentSeconds = 16;
-  openim.protobuf.Int32Value IsReversed = 17;
+  openim.protobuf.Int32Value isReversed = 17;
 }
 
 message SetConversationReq {
