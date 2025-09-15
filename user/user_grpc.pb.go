@@ -61,6 +61,7 @@ const (
 	User_GetAllOnlineUsers_FullMethodName             = "/openim.user.user/getAllOnlineUsers"
 	User_UpdateReverseBlock_FullMethodName            = "/openim.user.user/updateReverseBlock"
 	User_UpdateReverseContact_FullMethodName          = "/openim.user.user/updateReverseContact"
+	User_UpdateSingleRoomRecord_FullMethodName        = "/openim.user.user/updateSingleRoomRecord"
 )
 
 // UserClient is the client API for User service.
@@ -118,6 +119,8 @@ type UserClient interface {
 	GetAllOnlineUsers(ctx context.Context, in *GetAllOnlineUsersReq, opts ...grpc.CallOption) (*GetAllOnlineUsersResp, error)
 	UpdateReverseBlock(ctx context.Context, in *UpdateReverseBlockReq, opts ...grpc.CallOption) (*UpdateReverseBlockResp, error)
 	UpdateReverseContact(ctx context.Context, in *UpdateReverseContactReq, opts ...grpc.CallOption) (*UpdateReverseContactResp, error)
+	// update single room record
+	UpdateSingleRoomRecord(ctx context.Context, in *UpdateSingleRoomRecordReq, opts ...grpc.CallOption) (*UpdateSingleRoomRecordResp, error)
 }
 
 type userClient struct {
@@ -408,6 +411,16 @@ func (c *userClient) UpdateReverseContact(ctx context.Context, in *UpdateReverse
 	return out, nil
 }
 
+func (c *userClient) UpdateSingleRoomRecord(ctx context.Context, in *UpdateSingleRoomRecordReq, opts ...grpc.CallOption) (*UpdateSingleRoomRecordResp, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateSingleRoomRecordResp)
+	err := c.cc.Invoke(ctx, User_UpdateSingleRoomRecord_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // UserServer is the server API for User service.
 // All implementations must embed UnimplementedUserServer
 // for forward compatibility.
@@ -463,6 +476,8 @@ type UserServer interface {
 	GetAllOnlineUsers(context.Context, *GetAllOnlineUsersReq) (*GetAllOnlineUsersResp, error)
 	UpdateReverseBlock(context.Context, *UpdateReverseBlockReq) (*UpdateReverseBlockResp, error)
 	UpdateReverseContact(context.Context, *UpdateReverseContactReq) (*UpdateReverseContactResp, error)
+	// update single room record
+	UpdateSingleRoomRecord(context.Context, *UpdateSingleRoomRecordReq) (*UpdateSingleRoomRecordResp, error)
 	mustEmbedUnimplementedUserServer()
 }
 
@@ -556,6 +571,9 @@ func (UnimplementedUserServer) UpdateReverseBlock(context.Context, *UpdateRevers
 }
 func (UnimplementedUserServer) UpdateReverseContact(context.Context, *UpdateReverseContactReq) (*UpdateReverseContactResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateReverseContact not implemented")
+}
+func (UnimplementedUserServer) UpdateSingleRoomRecord(context.Context, *UpdateSingleRoomRecordReq) (*UpdateSingleRoomRecordResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateSingleRoomRecord not implemented")
 }
 func (UnimplementedUserServer) mustEmbedUnimplementedUserServer() {}
 func (UnimplementedUserServer) testEmbeddedByValue()              {}
@@ -1082,6 +1100,24 @@ func _User_UpdateReverseContact_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _User_UpdateSingleRoomRecord_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateSingleRoomRecordReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServer).UpdateSingleRoomRecord(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: User_UpdateSingleRoomRecord_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServer).UpdateSingleRoomRecord(ctx, req.(*UpdateSingleRoomRecordReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // User_ServiceDesc is the grpc.ServiceDesc for User service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1200,6 +1236,10 @@ var User_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "updateReverseContact",
 			Handler:    _User_UpdateReverseContact_Handler,
+		},
+		{
+			MethodName: "updateSingleRoomRecord",
+			Handler:    _User_UpdateSingleRoomRecord_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

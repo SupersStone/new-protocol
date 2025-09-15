@@ -348,6 +348,16 @@ message updateReverseContactReq {
 }
 message updateReverseContactResp {}
 
+message updateSingleRoomRecordReq {
+  string roomName = 1;
+  string sendID = 2;
+  string receiveID = 3;
+  int32 createTime = 4;
+  int32 duration = 5;
+  string type = 6;
+}
+message updateSingleRoomRecordResp {}
+
 service user {
   //Get the specified user information full field
   rpc getDesignateUsers(getDesignateUsersReq) returns (getDesignateUsersResp);
@@ -403,5 +413,7 @@ service user {
 
   rpc updateReverseBlock(updateReverseBlockReq) returns (updateReverseBlockResp);
   rpc updateReverseContact(updateReverseContactReq) returns (updateReverseContactResp);
+  // update single room record
+  rpc updateSingleRoomRecord(updateSingleRoomRecordReq) returns (updateSingleRoomRecordResp);
 
 }
