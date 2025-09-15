@@ -71,6 +71,9 @@ const (
 	UserSubscribeOnlineStatusNotification = 1308
 	UpdateReverseBlockNotification        = 1309
 	UpdateReverseContactNotification      = 1310
+	UserCreateVideoMeetingNotification    = 1311
+	UserReceiveVideoMeetingNotification   = 1312
+	UserRefuseVideoMeetingNotification    = 1313
 
 	UserNotificationEnd = 1399
 	OANotification      = 1400
