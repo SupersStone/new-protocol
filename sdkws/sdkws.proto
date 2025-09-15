@@ -605,6 +605,11 @@ message UpdateReverseContactTips {
   string contactUserID = 2;
 }
 
+message UpdateSingleRoomRecordTips {
+  string SendID = 1;
+  string ReceiveID = 2;
+}
+
 //////////////////////conversation/////////////////////
 message ConversationUpdateTips {
   string userID = 1;
