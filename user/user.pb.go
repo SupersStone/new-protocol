@@ -3713,7 +3713,7 @@ type UpdateSingleRoomRecordReq struct {
 	ReceiveID     string                 `protobuf:"bytes,3,opt,name=receiveID,proto3" json:"receiveID,omitempty"`
 	CreateTime    int32                  `protobuf:"varint,4,opt,name=createTime,proto3" json:"createTime,omitempty"`
 	Duration      int32                  `protobuf:"varint,5,opt,name=duration,proto3" json:"duration,omitempty"`
-	Type          string                 `protobuf:"bytes,6,opt,name=type,proto3" json:"type,omitempty"`
+	Type          int32                  `protobuf:"varint,6,opt,name=type,proto3" json:"type,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3783,11 +3783,11 @@ func (x *UpdateSingleRoomRecordReq) GetDuration() int32 {
 	return 0
 }
 
-func (x *UpdateSingleRoomRecordReq) GetType() string {
+func (x *UpdateSingleRoomRecordReq) GetType() int32 {
 	if x != nil {
 		return x.Type
 	}
-	return ""
+	return 0
 }
 
 type UpdateSingleRoomRecordResp struct {
@@ -4130,7 +4130,7 @@ const file_user_user_proto_rawDesc = "" +
 	"createTime\x18\x04 \x01(\x05R\n" +
 	"createTime\x12\x1a\n" +
 	"\bduration\x18\x05 \x01(\x05R\bduration\x12\x12\n" +
-	"\x04type\x18\x06 \x01(\tR\x04type\"\x1c\n" +
+	"\x04type\x18\x06 \x01(\x05R\x04type\"\x1c\n" +
 	"\x1aupdateSingleRoomRecordResp2\xb5\x16\n" +
 	"\x04user\x12Z\n" +
 	"\x11getDesignateUsers\x12!.openim.user.getDesignateUsersReq\x1a\".openim.user.getDesignateUsersResp\x12Q\n" +

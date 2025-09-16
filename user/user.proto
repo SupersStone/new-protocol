@@ -354,7 +354,7 @@ message updateSingleRoomRecordReq {
   string receiveID = 3;
   int32 createTime = 4;
   int32 duration = 5;
-  string type = 6;
+  int32 type = 6;
 }
 message updateSingleRoomRecordResp {}
 

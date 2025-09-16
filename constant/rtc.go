@@ -14,4 +14,8 @@ const (
 const (
 	MeetingNotEnd = 0
 	MeetingEnd    = 1
+
+	SingleReceiveVideoMeeting = 1
+	SingleRefuseVideoMeeting  = 2
+	SingleHangupVideoMeeting  = 3
 )
