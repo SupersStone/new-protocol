@@ -15,8 +15,8 @@ const (
 	MeetingNotEnd = 0
 	MeetingEnd    = 1
 
-	SingleCreateVideoMeeting  = 1
-	SingleReceiveVideoMeeting = 2
-	SingleRefuseVideoMeeting  = 3
-	SingleHangupVideoMeeting  = 4
+	SingleCreateVideoMeeting  = 0
+	SingleReceiveVideoMeeting = 1
+	SingleRefuseVideoMeeting  = 2
+	SingleHangupVideoMeeting  = 3
 )
