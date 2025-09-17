@@ -606,8 +606,11 @@ message UpdateReverseContactTips {
 }
 
 message UpdateSingleRoomRecordTips {
-  string SendID = 1;
-  string ReceiveID = 2;
+  string roomName = 1;
+  string sendID = 2;
+  string receiveID = 3;
+  int32 createTime = 4;
+  openim.protobuf.Int32Value duration = 5;
 }
 
 //////////////////////conversation/////////////////////
