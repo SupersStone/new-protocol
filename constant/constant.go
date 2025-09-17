@@ -68,14 +68,15 @@ const (
 	UserCommandDeleteNotification = 1306
 	UserCommandUpdateNotification = 1307
 
-	UserSubscribeOnlineStatusNotification = 1308
-	UpdateReverseBlockNotification        = 1309
-	UpdateReverseContactNotification      = 1310
-	UserCreateVideoMeetingNotification    = 1311
-	UserReceiveVideoMeetingNotification   = 1312
-	UserRefuseVideoMeetingNotification    = 1313
-	UserHangUpVideoMeetingNotification    = 1314
-	UserNoAnswerVideoMeetingNotification  = 1315
+	UserSubscribeOnlineStatusNotification      = 1308
+	UpdateReverseBlockNotification             = 1309
+	UpdateReverseContactNotification           = 1310
+	UserCreateVideoMeetingNotification         = 1311
+	UserReceiveVideoMeetingNotification        = 1312
+	UserRefuseVideoMeetingNotification         = 1313
+	UserHangUpVideoMeetingNotification         = 1314
+	UserNoAnswerVideoMeetingNotification       = 1315
+	UserNetworkAnomalyVideoMeetingNotification = 1316
 
 	UserNotificationEnd = 1399
 	OANotification      = 1400
