@@ -611,6 +611,10 @@ message UpdateSingleRoomRecordTips {
   string receiveID = 3;
   int32 createTime = 4;
   openim.protobuf.Int32Value duration = 5;
+  openim.protobuf.StringValue sendFaceUrl = 7;
+  string sendSurname = 8;
+  string sendName = 9;
+  openim.protobuf.Int32Value isVideo = 10;
 }
 
 //////////////////////conversation/////////////////////

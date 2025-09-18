@@ -354,7 +354,11 @@ message updateSingleRoomRecordReq {
   string receiveID = 3;
   int32 createTime = 4;
   int32 duration = 5;
-  openim.protobuf.Int32Value type = 6;
+  int32 type = 6;
+  string sendFaceUrl = 7;
+  string sendSurname = 8;
+  string sendName = 9;
+  int32 isVideo = 10;
 }
 message updateSingleRoomRecordResp {}
 
