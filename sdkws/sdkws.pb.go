@@ -5349,8 +5349,8 @@ type UpdateSingleRoomRecordTips struct {
 	CreateTime    int32                   `protobuf:"varint,4,opt,name=createTime,proto3" json:"createTime,omitempty"`
 	Duration      *wrapperspb.Int32Value  `protobuf:"bytes,5,opt,name=duration,proto3" json:"duration,omitempty"`
 	SendFaceUrl   *wrapperspb.StringValue `protobuf:"bytes,7,opt,name=sendFaceUrl,proto3" json:"sendFaceUrl,omitempty"`
-	SendSurname   string                  `protobuf:"bytes,8,opt,name=sendSurname,proto3" json:"sendSurname,omitempty"`
-	SendName      string                  `protobuf:"bytes,9,opt,name=sendName,proto3" json:"sendName,omitempty"`
+	SendSurname   *wrapperspb.StringValue `protobuf:"bytes,8,opt,name=sendSurname,proto3" json:"sendSurname,omitempty"`
+	SendName      *wrapperspb.StringValue `protobuf:"bytes,9,opt,name=sendName,proto3" json:"sendName,omitempty"`
 	IsVideo       *wrapperspb.Int32Value  `protobuf:"bytes,10,opt,name=isVideo,proto3" json:"isVideo,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -5428,18 +5428,18 @@ func (x *UpdateSingleRoomRecordTips) GetSendFaceUrl() *wrapperspb.StringValue {
 	return nil
 }
 
-func (x *UpdateSingleRoomRecordTips) GetSendSurname() string {
+func (x *UpdateSingleRoomRecordTips) GetSendSurname() *wrapperspb.StringValue {
 	if x != nil {
 		return x.SendSurname
 	}
-	return ""
+	return nil
 }
 
-func (x *UpdateSingleRoomRecordTips) GetSendName() string {
+func (x *UpdateSingleRoomRecordTips) GetSendName() *wrapperspb.StringValue {
 	if x != nil {
 		return x.SendName
 	}
-	return ""
+	return nil
 }
 
 func (x *UpdateSingleRoomRecordTips) GetIsVideo() *wrapperspb.Int32Value {
@@ -7354,7 +7354,7 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"\vblockUserID\x18\x02 \x01(\tR\vblockUserID\"X\n" +
 	"\x18UpdateReverseContactTips\x12\x16\n" +
 	"\x06UserID\x18\x01 \x01(\tR\x06UserID\x12$\n" +
-	"\rcontactUserID\x18\x02 \x01(\tR\rcontactUserID\"\xfc\x02\n" +
+	"\rcontactUserID\x18\x02 \x01(\tR\rcontactUserID\"\xb8\x03\n" +
 	"\x1aUpdateSingleRoomRecordTips\x12\x1a\n" +
 	"\broomName\x18\x01 \x01(\tR\broomName\x12\x16\n" +
 	"\x06sendID\x18\x02 \x01(\tR\x06sendID\x12\x1c\n" +
@@ -7363,9 +7363,9 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"createTime\x18\x04 \x01(\x05R\n" +
 	"createTime\x127\n" +
 	"\bduration\x18\x05 \x01(\v2\x1b.openim.protobuf.Int32ValueR\bduration\x12>\n" +
-	"\vsendFaceUrl\x18\a \x01(\v2\x1c.openim.protobuf.StringValueR\vsendFaceUrl\x12 \n" +
-	"\vsendSurname\x18\b \x01(\tR\vsendSurname\x12\x1a\n" +
-	"\bsendName\x18\t \x01(\tR\bsendName\x125\n" +
+	"\vsendFaceUrl\x18\a \x01(\v2\x1c.openim.protobuf.StringValueR\vsendFaceUrl\x12>\n" +
+	"\vsendSurname\x18\b \x01(\v2\x1c.openim.protobuf.StringValueR\vsendSurname\x128\n" +
+	"\bsendName\x18\t \x01(\v2\x1c.openim.protobuf.StringValueR\bsendName\x125\n" +
 	"\aisVideo\x18\n" +
 	" \x01(\v2\x1b.openim.protobuf.Int32ValueR\aisVideo\"`\n" +
 	"\x16ConversationUpdateTips\x12\x16\n" +
@@ -7705,23 +7705,25 @@ var file_sdkws_sdkws_proto_depIdxs = []int32{
 	47,  // 101: openim.sdkws.FriendInfoChangedTips.fromToUserID:type_name -> openim.sdkws.FromToUserID
 	92,  // 102: openim.sdkws.UpdateSingleRoomRecordTips.duration:type_name -> openim.protobuf.Int32Value
 	93,  // 103: openim.sdkws.UpdateSingleRoomRecordTips.sendFaceUrl:type_name -> openim.protobuf.StringValue
-	92,  // 104: openim.sdkws.UpdateSingleRoomRecordTips.isVideo:type_name -> openim.protobuf.Int32Value
-	92,  // 105: openim.sdkws.ConversationSetPrivateTips.burnDuration:type_name -> openim.protobuf.Int32Value
-	47,  // 106: openim.sdkws.FriendsInfoUpdateTips.fromToUserID:type_name -> openim.sdkws.FromToUserID
-	80,  // 107: openim.sdkws.SubUserOnlineStatusTips.subscribers:type_name -> openim.sdkws.SubUserOnlineStatusElem
-	92,  // 108: openim.sdkws.UserPrivacyUpdate.allowSendMessages:type_name -> openim.protobuf.Int32Value
-	92,  // 109: openim.sdkws.UserPrivacyUpdate.allowViewLastOnlineTime:type_name -> openim.protobuf.Int32Value
-	92,  // 110: openim.sdkws.UserPrivacyUpdate.allowVoiceCalls:type_name -> openim.protobuf.Int32Value
-	92,  // 111: openim.sdkws.UserPrivacyUpdate.allowGroupInvitations:type_name -> openim.protobuf.Int32Value
-	15,  // 112: openim.sdkws.PullMessageBySeqsResp.MsgsEntry.value:type_name -> openim.sdkws.PullMsgs
-	15,  // 113: openim.sdkws.PullMessageBySeqsResp.NotificationMsgsEntry.value:type_name -> openim.sdkws.PullMsgs
-	15,  // 114: openim.sdkws.PushMessages.MsgsEntry.value:type_name -> openim.sdkws.PullMsgs
-	15,  // 115: openim.sdkws.PushMessages.NotificationMsgsEntry.value:type_name -> openim.sdkws.PullMsgs
-	116, // [116:116] is the sub-list for method output_type
-	116, // [116:116] is the sub-list for method input_type
-	116, // [116:116] is the sub-list for extension type_name
-	116, // [116:116] is the sub-list for extension extendee
-	0,   // [0:116] is the sub-list for field type_name
+	93,  // 104: openim.sdkws.UpdateSingleRoomRecordTips.sendSurname:type_name -> openim.protobuf.StringValue
+	93,  // 105: openim.sdkws.UpdateSingleRoomRecordTips.sendName:type_name -> openim.protobuf.StringValue
+	92,  // 106: openim.sdkws.UpdateSingleRoomRecordTips.isVideo:type_name -> openim.protobuf.Int32Value
+	92,  // 107: openim.sdkws.ConversationSetPrivateTips.burnDuration:type_name -> openim.protobuf.Int32Value
+	47,  // 108: openim.sdkws.FriendsInfoUpdateTips.fromToUserID:type_name -> openim.sdkws.FromToUserID
+	80,  // 109: openim.sdkws.SubUserOnlineStatusTips.subscribers:type_name -> openim.sdkws.SubUserOnlineStatusElem
+	92,  // 110: openim.sdkws.UserPrivacyUpdate.allowSendMessages:type_name -> openim.protobuf.Int32Value
+	92,  // 111: openim.sdkws.UserPrivacyUpdate.allowViewLastOnlineTime:type_name -> openim.protobuf.Int32Value
+	92,  // 112: openim.sdkws.UserPrivacyUpdate.allowVoiceCalls:type_name -> openim.protobuf.Int32Value
+	92,  // 113: openim.sdkws.UserPrivacyUpdate.allowGroupInvitations:type_name -> openim.protobuf.Int32Value
+	15,  // 114: openim.sdkws.PullMessageBySeqsResp.MsgsEntry.value:type_name -> openim.sdkws.PullMsgs
+	15,  // 115: openim.sdkws.PullMessageBySeqsResp.NotificationMsgsEntry.value:type_name -> openim.sdkws.PullMsgs
+	15,  // 116: openim.sdkws.PushMessages.MsgsEntry.value:type_name -> openim.sdkws.PullMsgs
+	15,  // 117: openim.sdkws.PushMessages.NotificationMsgsEntry.value:type_name -> openim.sdkws.PullMsgs
+	118, // [118:118] is the sub-list for method output_type
+	118, // [118:118] is the sub-list for method input_type
+	118, // [118:118] is the sub-list for extension type_name
+	118, // [118:118] is the sub-list for extension extendee
+	0,   // [0:118] is the sub-list for field type_name
 }
 
 func init() { file_sdkws_sdkws_proto_init() }
