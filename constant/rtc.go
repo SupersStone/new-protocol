@@ -23,6 +23,6 @@ const (
 	SingleNetworkAnomalyVideoMeeting = 5
 	SingleBusylineVideoMeeting       = 6
 
-	SingleSelfCancelVideoMeeting = 10 // User cancels
-	SingleSelfHangupVideoMeeting = 11
+	SingleOneselfCancelVideoMeeting = 10 // User cancels
+	SingleOneselfHangupVideoMeeting = 11
 )
