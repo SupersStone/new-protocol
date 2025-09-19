@@ -21,4 +21,8 @@ const (
 	SingleHangupVideoMeeting       = 3
 	SingleNoAnswerVideoMeeting     = 4
 	UserNetworkAnomalyVideoMeeting = 5
+	SingleBusylineVideoMeeting     = 6
+
+	SingleSelfCancelVideoMeeting = 10 // User cancels
+	SingleSelfHangupVideoMeeting = 11
 )
