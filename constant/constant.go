@@ -77,6 +77,8 @@ const (
 	UserHangUpVideoMeetingNotification         = 1314
 	UserNoAnswerVideoMeetingNotification       = 1315
 	UserNetworkAnomalyVideoMeetingNotification = 1316
+	UserBusylineVideoMeetingNotification       = 1317
+	UserOneselfCancelVideoMeetingNotification  = 1318
 
 	UserNotificationEnd = 1399
 	OANotification      = 1400

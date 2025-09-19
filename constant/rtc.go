@@ -15,13 +15,13 @@ const (
 	MeetingNotEnd = 0
 	MeetingEnd    = 1
 
-	SingleCreateVideoMeeting       = 0
-	SingleReceiveVideoMeeting      = 1
-	SingleRefuseVideoMeeting       = 2
-	SingleHangupVideoMeeting       = 3
-	SingleNoAnswerVideoMeeting     = 4
-	UserNetworkAnomalyVideoMeeting = 5
-	SingleBusylineVideoMeeting     = 6
+	SingleCreateVideoMeeting         = 0
+	SingleReceiveVideoMeeting        = 1
+	SingleRefuseVideoMeeting         = 2
+	SingleHangupVideoMeeting         = 3
+	SingleNoAnswerVideoMeeting       = 4
+	SingleNetworkAnomalyVideoMeeting = 5
+	SingleBusylineVideoMeeting       = 6
 
 	SingleSelfCancelVideoMeeting = 10 // User cancels
 	SingleSelfHangupVideoMeeting = 11
