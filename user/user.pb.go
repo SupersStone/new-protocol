@@ -3718,6 +3718,7 @@ type UpdateSingleRoomRecordReq struct {
 	SendSurname   string                 `protobuf:"bytes,8,opt,name=sendSurname,proto3" json:"sendSurname,omitempty"`
 	SendName      string                 `protobuf:"bytes,9,opt,name=sendName,proto3" json:"sendName,omitempty"`
 	IsVideo       int32                  `protobuf:"varint,10,opt,name=isVideo,proto3" json:"isVideo,omitempty"`
+	CreateID      string                 `protobuf:"bytes,11,opt,name=createID,proto3" json:"createID,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3820,6 +3821,13 @@ func (x *UpdateSingleRoomRecordReq) GetIsVideo() int32 {
 		return x.IsVideo
 	}
 	return 0
+}
+
+func (x *UpdateSingleRoomRecordReq) GetCreateID() string {
+	if x != nil {
+		return x.CreateID
+	}
+	return ""
 }
 
 type UpdateSingleRoomRecordResp struct {
@@ -4153,7 +4161,7 @@ const file_user_user_proto_rawDesc = "" +
 	"\x17updateReverseContactReq\x12 \n" +
 	"\vownerUserId\x18\x01 \x01(\tR\vownerUserId\x12$\n" +
 	"\rcontactUserId\x18\x02 \x01(\tR\rcontactUserId\"\x1a\n" +
-	"\x18updateReverseContactResp\"\xd4\x02\n" +
+	"\x18updateReverseContactResp\"\xf0\x02\n" +
 	"\x19updateSingleRoomRecordReq\x12\x1a\n" +
 	"\broomName\x18\x01 \x01(\tR\broomName\x12\x16\n" +
 	"\x06sendID\x18\x02 \x01(\tR\x06sendID\x12\x1c\n" +
@@ -4167,7 +4175,8 @@ const file_user_user_proto_rawDesc = "" +
 	"\vsendSurname\x18\b \x01(\tR\vsendSurname\x12\x1a\n" +
 	"\bsendName\x18\t \x01(\tR\bsendName\x12\x18\n" +
 	"\aisVideo\x18\n" +
-	" \x01(\x05R\aisVideo\"\x1c\n" +
+	" \x01(\x05R\aisVideo\x12\x1a\n" +
+	"\bcreateID\x18\v \x01(\tR\bcreateID\"\x1c\n" +
 	"\x1aupdateSingleRoomRecordResp2\xb5\x16\n" +
 	"\x04user\x12Z\n" +
 	"\x11getDesignateUsers\x12!.openim.user.getDesignateUsersReq\x1a\".openim.user.getDesignateUsersResp\x12Q\n" +

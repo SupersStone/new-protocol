@@ -359,6 +359,7 @@ message updateSingleRoomRecordReq {
   string sendSurname = 8;
   string sendName = 9;
   int32 isVideo = 10;
+  string createID = 11;
 }
 message updateSingleRoomRecordResp {}
 
