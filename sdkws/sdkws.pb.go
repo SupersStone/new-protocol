@@ -5348,10 +5348,11 @@ type UpdateSingleRoomRecordTips struct {
 	ReceiveID     string                  `protobuf:"bytes,3,opt,name=receiveID,proto3" json:"receiveID,omitempty"`
 	CreateTime    int32                   `protobuf:"varint,4,opt,name=createTime,proto3" json:"createTime,omitempty"`
 	Duration      *wrapperspb.Int32Value  `protobuf:"bytes,5,opt,name=duration,proto3" json:"duration,omitempty"`
-	SendFaceUrl   *wrapperspb.StringValue `protobuf:"bytes,7,opt,name=sendFaceUrl,proto3" json:"sendFaceUrl,omitempty"`
-	SendSurname   *wrapperspb.StringValue `protobuf:"bytes,8,opt,name=sendSurname,proto3" json:"sendSurname,omitempty"`
-	SendName      *wrapperspb.StringValue `protobuf:"bytes,9,opt,name=sendName,proto3" json:"sendName,omitempty"`
-	IsVideo       *wrapperspb.Int32Value  `protobuf:"bytes,10,opt,name=isVideo,proto3" json:"isVideo,omitempty"`
+	SendFaceUrl   *wrapperspb.StringValue `protobuf:"bytes,6,opt,name=sendFaceUrl,proto3" json:"sendFaceUrl,omitempty"`
+	SendSurname   *wrapperspb.StringValue `protobuf:"bytes,7,opt,name=sendSurname,proto3" json:"sendSurname,omitempty"`
+	SendName      *wrapperspb.StringValue `protobuf:"bytes,8,opt,name=sendName,proto3" json:"sendName,omitempty"`
+	IsVideo       *wrapperspb.Int32Value  `protobuf:"bytes,9,opt,name=isVideo,proto3" json:"isVideo,omitempty"`
+	CreateID      string                  `protobuf:"bytes,10,opt,name=createID,proto3" json:"createID,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -5447,6 +5448,13 @@ func (x *UpdateSingleRoomRecordTips) GetIsVideo() *wrapperspb.Int32Value {
 		return x.IsVideo
 	}
 	return nil
+}
+
+func (x *UpdateSingleRoomRecordTips) GetCreateID() string {
+	if x != nil {
+		return x.CreateID
+	}
+	return ""
 }
 
 // ////////////////////conversation/////////////////////
@@ -7354,7 +7362,7 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"\vblockUserID\x18\x02 \x01(\tR\vblockUserID\"X\n" +
 	"\x18UpdateReverseContactTips\x12\x16\n" +
 	"\x06UserID\x18\x01 \x01(\tR\x06UserID\x12$\n" +
-	"\rcontactUserID\x18\x02 \x01(\tR\rcontactUserID\"\xb8\x03\n" +
+	"\rcontactUserID\x18\x02 \x01(\tR\rcontactUserID\"\xd4\x03\n" +
 	"\x1aUpdateSingleRoomRecordTips\x12\x1a\n" +
 	"\broomName\x18\x01 \x01(\tR\broomName\x12\x16\n" +
 	"\x06sendID\x18\x02 \x01(\tR\x06sendID\x12\x1c\n" +
@@ -7363,11 +7371,12 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"createTime\x18\x04 \x01(\x05R\n" +
 	"createTime\x127\n" +
 	"\bduration\x18\x05 \x01(\v2\x1b.openim.protobuf.Int32ValueR\bduration\x12>\n" +
-	"\vsendFaceUrl\x18\a \x01(\v2\x1c.openim.protobuf.StringValueR\vsendFaceUrl\x12>\n" +
-	"\vsendSurname\x18\b \x01(\v2\x1c.openim.protobuf.StringValueR\vsendSurname\x128\n" +
-	"\bsendName\x18\t \x01(\v2\x1c.openim.protobuf.StringValueR\bsendName\x125\n" +
-	"\aisVideo\x18\n" +
-	" \x01(\v2\x1b.openim.protobuf.Int32ValueR\aisVideo\"`\n" +
+	"\vsendFaceUrl\x18\x06 \x01(\v2\x1c.openim.protobuf.StringValueR\vsendFaceUrl\x12>\n" +
+	"\vsendSurname\x18\a \x01(\v2\x1c.openim.protobuf.StringValueR\vsendSurname\x128\n" +
+	"\bsendName\x18\b \x01(\v2\x1c.openim.protobuf.StringValueR\bsendName\x125\n" +
+	"\aisVideo\x18\t \x01(\v2\x1b.openim.protobuf.Int32ValueR\aisVideo\x12\x1a\n" +
+	"\bcreateID\x18\n" +
+	" \x01(\tR\bcreateID\"`\n" +
 	"\x16ConversationUpdateTips\x12\x16\n" +
 	"\x06userID\x18\x01 \x01(\tR\x06userID\x12.\n" +
 	"\x12conversationIDList\x18\x02 \x03(\tR\x12conversationIDList\"\xd3\x01\n" +
