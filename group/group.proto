@@ -552,6 +552,7 @@ message UpdateGroupRoomRecordReq {
   int32 createTime = 6;
   int32 duration = 7;
   string type = 8;
+  string faceUrl = 9;
 }
 
 message UpdateGroupRoomRecordResp {}
