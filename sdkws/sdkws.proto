@@ -486,6 +486,7 @@ message GroupRoomFullInfo {
   openim.protobuf.Int32Value status = 7;
   openim.protobuf.Int32Value createTime = 8;
   openim.protobuf.Int32Value duration = 9;
+  openim.protobuf.StringValue faceUrl = 10;
 }
 
 message GroupRoomRecordTips {
