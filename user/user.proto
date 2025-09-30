@@ -343,7 +343,7 @@ message updateReverseBlockReq {
 message updateReverseBlockResp {}
 
 message operateContactOrBlockReq {
-  string userID = 1;
+  string ownerUserId = 1;
   string contactUserID = 2;
 }
 message operateContactOrBlockResp {}

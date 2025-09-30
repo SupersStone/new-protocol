@@ -3620,7 +3620,7 @@ func (*UpdateReverseBlockResp) Descriptor() ([]byte, []int) {
 
 type OperateContactOrBlockReq struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserID        string                 `protobuf:"bytes,1,opt,name=userID,proto3" json:"userID,omitempty"`
+	OwnerUserId   string                 `protobuf:"bytes,1,opt,name=ownerUserId,proto3" json:"ownerUserId,omitempty"`
 	ContactUserID string                 `protobuf:"bytes,2,opt,name=contactUserID,proto3" json:"contactUserID,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -3656,9 +3656,9 @@ func (*OperateContactOrBlockReq) Descriptor() ([]byte, []int) {
 	return file_user_user_proto_rawDescGZIP(), []int{71}
 }
 
-func (x *OperateContactOrBlockReq) GetUserID() string {
+func (x *OperateContactOrBlockReq) GetOwnerUserId() string {
 	if x != nil {
-		return x.UserID
+		return x.OwnerUserId
 	}
 	return ""
 }
@@ -4245,9 +4245,9 @@ const file_user_user_proto_rawDesc = "" +
 	"\x15updateReverseBlockReq\x12 \n" +
 	"\vownerUserId\x18\x01 \x01(\tR\vownerUserId\x12 \n" +
 	"\vblockUserId\x18\x02 \x01(\tR\vblockUserId\"\x18\n" +
-	"\x16updateReverseBlockResp\"X\n" +
-	"\x18operateContactOrBlockReq\x12\x16\n" +
-	"\x06userID\x18\x01 \x01(\tR\x06userID\x12$\n" +
+	"\x16updateReverseBlockResp\"b\n" +
+	"\x18operateContactOrBlockReq\x12 \n" +
+	"\vownerUserId\x18\x01 \x01(\tR\vownerUserId\x12$\n" +
 	"\rcontactUserID\x18\x02 \x01(\tR\rcontactUserID\"\x1b\n" +
 	"\x19operateContactOrBlockResp\"a\n" +
 	"\x17updateReverseContactReq\x12 \n" +

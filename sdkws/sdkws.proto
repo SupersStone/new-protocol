@@ -606,6 +606,11 @@ message UpdateReverseContactTips {
   string contactUserID = 2;
 }
 
+message OperateContactOrBlockTips {
+  string ownerUserId = 1;
+  string contactUserID = 2;
+}
+
 message UpdateSingleRoomRecordTips {
   string roomName = 1;
   string sendID = 2;
