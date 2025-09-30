@@ -60,6 +60,7 @@ const (
 	User_SetUserOnlineStatus_FullMethodName           = "/openim.user.user/setUserOnlineStatus"
 	User_GetAllOnlineUsers_FullMethodName             = "/openim.user.user/getAllOnlineUsers"
 	User_UpdateReverseBlock_FullMethodName            = "/openim.user.user/updateReverseBlock"
+	User_OperateContactOrBlock_FullMethodName         = "/openim.user.user/operateContactOrBlock"
 	User_UpdateReverseContact_FullMethodName          = "/openim.user.user/updateReverseContact"
 	User_UpdateSingleRoomRecord_FullMethodName        = "/openim.user.user/updateSingleRoomRecord"
 )
@@ -118,6 +119,7 @@ type UserClient interface {
 	// get all online users
 	GetAllOnlineUsers(ctx context.Context, in *GetAllOnlineUsersReq, opts ...grpc.CallOption) (*GetAllOnlineUsersResp, error)
 	UpdateReverseBlock(ctx context.Context, in *UpdateReverseBlockReq, opts ...grpc.CallOption) (*UpdateReverseBlockResp, error)
+	OperateContactOrBlock(ctx context.Context, in *OperateContactOrBlockReq, opts ...grpc.CallOption) (*OperateContactOrBlockResp, error)
 	UpdateReverseContact(ctx context.Context, in *UpdateReverseContactReq, opts ...grpc.CallOption) (*UpdateReverseContactResp, error)
 	// update single room record
 	UpdateSingleRoomRecord(ctx context.Context, in *UpdateSingleRoomRecordReq, opts ...grpc.CallOption) (*UpdateSingleRoomRecordResp, error)
@@ -401,6 +403,16 @@ func (c *userClient) UpdateReverseBlock(ctx context.Context, in *UpdateReverseBl
 	return out, nil
 }
 
+func (c *userClient) OperateContactOrBlock(ctx context.Context, in *OperateContactOrBlockReq, opts ...grpc.CallOption) (*OperateContactOrBlockResp, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(OperateContactOrBlockResp)
+	err := c.cc.Invoke(ctx, User_OperateContactOrBlock_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *userClient) UpdateReverseContact(ctx context.Context, in *UpdateReverseContactReq, opts ...grpc.CallOption) (*UpdateReverseContactResp, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(UpdateReverseContactResp)
@@ -475,6 +487,7 @@ type UserServer interface {
 	// get all online users
 	GetAllOnlineUsers(context.Context, *GetAllOnlineUsersReq) (*GetAllOnlineUsersResp, error)
 	UpdateReverseBlock(context.Context, *UpdateReverseBlockReq) (*UpdateReverseBlockResp, error)
+	OperateContactOrBlock(context.Context, *OperateContactOrBlockReq) (*OperateContactOrBlockResp, error)
 	UpdateReverseContact(context.Context, *UpdateReverseContactReq) (*UpdateReverseContactResp, error)
 	// update single room record
 	UpdateSingleRoomRecord(context.Context, *UpdateSingleRoomRecordReq) (*UpdateSingleRoomRecordResp, error)
@@ -568,6 +581,9 @@ func (UnimplementedUserServer) GetAllOnlineUsers(context.Context, *GetAllOnlineU
 }
 func (UnimplementedUserServer) UpdateReverseBlock(context.Context, *UpdateReverseBlockReq) (*UpdateReverseBlockResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateReverseBlock not implemented")
+}
+func (UnimplementedUserServer) OperateContactOrBlock(context.Context, *OperateContactOrBlockReq) (*OperateContactOrBlockResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method OperateContactOrBlock not implemented")
 }
 func (UnimplementedUserServer) UpdateReverseContact(context.Context, *UpdateReverseContactReq) (*UpdateReverseContactResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateReverseContact not implemented")
@@ -1082,6 +1098,24 @@ func _User_UpdateReverseBlock_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _User_OperateContactOrBlock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(OperateContactOrBlockReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServer).OperateContactOrBlock(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: User_OperateContactOrBlock_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServer).OperateContactOrBlock(ctx, req.(*OperateContactOrBlockReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _User_UpdateReverseContact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateReverseContactReq)
 	if err := dec(in); err != nil {
@@ -1232,6 +1266,10 @@ var User_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "updateReverseBlock",
 			Handler:    _User_UpdateReverseBlock_Handler,
+		},
+		{
+			MethodName: "operateContactOrBlock",
+			Handler:    _User_OperateContactOrBlock_Handler,
 		},
 		{
 			MethodName: "updateReverseContact",

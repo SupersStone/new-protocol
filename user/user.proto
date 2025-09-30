@@ -342,6 +342,12 @@ message updateReverseBlockReq {
 }
 message updateReverseBlockResp {}
 
+message operateContactOrBlockReq {
+  string userID = 1;
+  string contactUserID = 2;
+}
+message operateContactOrBlockResp {}
+
 message updateReverseContactReq {
   string ownerUserId = 1;
   string contactUserId = 2;
@@ -417,6 +423,8 @@ service user {
   rpc getAllOnlineUsers(getAllOnlineUsersReq) returns (getAllOnlineUsersResp);
 
   rpc updateReverseBlock(updateReverseBlockReq) returns (updateReverseBlockResp);
+  rpc operateContactOrBlock(operateContactOrBlockReq) returns (operateContactOrBlockResp);
+
   rpc updateReverseContact(updateReverseContactReq) returns (updateReverseContactResp);
   // update single room record
   rpc updateSingleRoomRecord(updateSingleRoomRecordReq) returns (updateSingleRoomRecordResp);
