@@ -79,6 +79,7 @@ const (
 	UserNetworkAnomalyVideoMeetingNotification = 1316
 	UserBusylineVideoMeetingNotification       = 1317
 	UserOneselfCancelVideoMeetingNotification  = 1318
+	OperateContactOrBlockNotification          = 1319
 
 	UserNotificationEnd = 1399
 	OANotification      = 1400
