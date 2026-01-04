@@ -346,7 +346,7 @@ message operateContactOrBlockReq {
   string ownerUserId = 1;
   string contactUserID = 2;
   int32 isContactOperate = 3;
-  int32 isBlockOperate = 4;
+  int32 operateValue = 4;
 }
 message operateContactOrBlockResp {}
 

@@ -3623,7 +3623,7 @@ type OperateContactOrBlockReq struct {
 	OwnerUserId      string                 `protobuf:"bytes,1,opt,name=ownerUserId,proto3" json:"ownerUserId"`
 	ContactUserID    string                 `protobuf:"bytes,2,opt,name=contactUserID,proto3" json:"contactUserID"`
 	IsContactOperate int32                  `protobuf:"varint,3,opt,name=isContactOperate,proto3" json:"isContactOperate"`
-	IsBlockOperate   int32                  `protobuf:"varint,4,opt,name=isBlockOperate,proto3" json:"isBlockOperate"`
+	OperateValue     int32                  `protobuf:"varint,4,opt,name=operateValue,proto3" json:"operateValue"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -3679,9 +3679,9 @@ func (x *OperateContactOrBlockReq) GetIsContactOperate() int32 {
 	return 0
 }
 
-func (x *OperateContactOrBlockReq) GetIsBlockOperate() int32 {
+func (x *OperateContactOrBlockReq) GetOperateValue() int32 {
 	if x != nil {
-		return x.IsBlockOperate
+		return x.OperateValue
 	}
 	return 0
 }
@@ -4261,12 +4261,12 @@ const file_user_user_proto_rawDesc = "" +
 	"\x15updateReverseBlockReq\x12 \n" +
 	"\vownerUserId\x18\x01 \x01(\tR\vownerUserId\x12 \n" +
 	"\vblockUserId\x18\x02 \x01(\tR\vblockUserId\"\x18\n" +
-	"\x16updateReverseBlockResp\"\xb6\x01\n" +
+	"\x16updateReverseBlockResp\"\xb2\x01\n" +
 	"\x18operateContactOrBlockReq\x12 \n" +
 	"\vownerUserId\x18\x01 \x01(\tR\vownerUserId\x12$\n" +
 	"\rcontactUserID\x18\x02 \x01(\tR\rcontactUserID\x12*\n" +
-	"\x10isContactOperate\x18\x03 \x01(\x05R\x10isContactOperate\x12&\n" +
-	"\x0eisBlockOperate\x18\x04 \x01(\x05R\x0eisBlockOperate\"\x1b\n" +
+	"\x10isContactOperate\x18\x03 \x01(\x05R\x10isContactOperate\x12\"\n" +
+	"\foperateValue\x18\x04 \x01(\x05R\foperateValue\"\x1b\n" +
 	"\x19operateContactOrBlockResp\"a\n" +
 	"\x17updateReverseContactReq\x12 \n" +
 	"\vownerUserId\x18\x01 \x01(\tR\vownerUserId\x12$\n" +
