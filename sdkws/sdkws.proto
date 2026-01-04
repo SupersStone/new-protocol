@@ -609,6 +609,8 @@ message UpdateReverseContactTips {
 message OperateContactOrBlockTips {
   string ownerUserId = 1;
   string contactUserID = 2;
+  int32 isContactOperate = 3;
+  int32 operateValue = 4;
 }
 
 message UpdateSingleRoomRecordTips {
